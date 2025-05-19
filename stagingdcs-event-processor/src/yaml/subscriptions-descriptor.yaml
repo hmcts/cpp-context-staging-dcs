@@ -1,0 +1,11 @@
+subscriptions_descriptor:
+  spec_version: 1.0.0
+  service: stagingdcs
+  service_component: EVENT_PROCESSOR
+  subscriptions:
+    - name: public event subscription
+      events:
+        - name: public.progression.case-defendant-changed
+          schema_uri: http://justice.gov.uk/progression/courts/defendant-updated.json
+
+      event_source_name: public.event.source

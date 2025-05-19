@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+    <changeSet id="create-transaction-detail" author="cpp-context-staging-dcs">
+        <createTable tableName="transaction_detail">
+            <column name="transaction_ref_id" type="UUID">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="payload" type="TEXT"/>
+            <column name="error" type="TEXT"/>
+            <column name="created_at" type="DATETIME TZ"/>
+            <column name="updated_at" type="DATETIME TZ"/>
+            <column name="transaction_status" type="TEXT"/>
+            <column name="transaction_type" type="TEXT"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,5 @@
+event_sources:
+
+  - name: public.event.source
+    location:
+      jms_uri:  jms:topic:public.event

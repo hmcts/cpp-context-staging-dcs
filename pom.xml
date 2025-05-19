@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>uk.gov.moj.cpp.common</groupId>
+        <artifactId>service-parent-pom</artifactId>
+        <version>17.100.3.1</version>
+    </parent>
+
+    <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
+    <artifactId>stagingdcs-parent</artifactId>
+    <version>17.100.1-SNAPSHOT</version>
+    <properties>
+        <mvn.site.url>file://${project.build.directory}/site</mvn.site.url>
+        <commons-dbutils.version>1.6</commons-dbutils.version>
+        <jgitflow.maven.developBranchName>main</jgitflow.maven.developBranchName>
+    </properties>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>stagingdcs-command-api</module>
+        <module>stagingdcs-domain-common</module>
+        <module>stagingdcs-event-processor</module>
+        <module>stagingdcs-event-sources</module>
+        <module>stagingdcs-healthchecks</module>
+        <module>stagingdcs-integration-test</module>
+        <module>stagingdcs-persistence</module>
+        <module>stagingdcs-query-api</module>
+        <module>stagingdcs-service</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <archiveClasses>true</archiveClasses>
+                    <attachClasses>true</attachClasses>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>analyze</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>commons-dbutils</groupId>
+                <artifactId>commons-dbutils</artifactId>
+                <version>${commons-dbutils.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <site>
+            <id>site</id>
+            <url>${mvn.site.url}</url>
+        </site>
+    </distributionManagement>
+</project>

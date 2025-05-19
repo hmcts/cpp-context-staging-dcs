@@ -1,0 +1,24 @@
+#%RAML 0.8
+title: Staging - DCS - Command API
+version: v1
+protocols: [ HTTP ]
+
+baseUri: http://localhost:8080/stagingdcs-command-api/command/api/rest
+
+/create-case:
+  post:
+      description: |
+        Create Case
+        ...
+        (mapping):
+            requestType: application/vnd.stagingdcs.create-case-defendant-file-in-dcs+json
+            name: stagingdcs.create-case-defendant-file-in-dcs
+        ...
+      body:
+        application/vnd.stagingdcs.create-case-defendant-file-in-dcs+json:
+            example: !include json/stagingdcs.create-case-defendant-file-in-dcs.json
+            schema: !include json/schema/stagingdcs.create-case-defendant-file-in-dcs.json
+
+      responses:
+            202:
+                description: Request Accepted

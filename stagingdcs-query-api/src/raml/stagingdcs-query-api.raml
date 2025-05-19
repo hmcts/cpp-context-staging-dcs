@@ -1,0 +1,27 @@
+#%RAML 0.8
+title: Staging Dcs Query API
+version: v0.1
+protocols: [ HTTP, HTTPS ]
+
+baseUri: http://localhost:8080/stagingdcs-query-api/query/api/rest
+
+/request/{caseId}:
+  uriParameters:
+        caseId:
+          description: Case Id
+          type: string
+  get:
+      description: |
+        Return the status for the case Id.
+        ...
+        (mapping):
+            responseType: application/vnd.stagingdcs.query.status-by-case-id+json
+            name: stagingdcs.query.status-by-case-id
+        ...
+      responses:
+            200:
+                description: OK
+                body:
+                  application/vnd.stagingdcs.query.status-by-case-id+json:
+                    example:  !include json/stagingdcs.query.status-by-case-id.json
+                    schema:  !include json/schema/stagingdcs.query.status-by-case-id.json

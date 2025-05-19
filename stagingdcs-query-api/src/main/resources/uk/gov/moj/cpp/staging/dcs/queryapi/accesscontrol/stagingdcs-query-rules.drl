@@ -1,0 +1,17 @@
+package uk.gov.moj.cpp.staging.dcs.query.api.accesscontrol;
+
+import uk.gov.moj.cpp.accesscontrol.drools.Outcome;
+import uk.gov.moj.cpp.accesscontrol.drools.Action;
+import accesscontrol.uk.gov.moj.cpp.staging.dcs.query.api.RuleConstants;
+import java.util.Arrays;
+
+global uk.gov.moj.cpp.accesscontrol.common.providers.UserAndGroupProvider userAndGroupProvider;
+
+rule "Query - API - stagingdcs.query.status-by-case-id"
+  when
+    $outcome: Outcome();
+    $action: Action(name == "stagingdcs.query.status-by-case-id");
+
+  then
+    $outcome.setSuccess(true);
+end
