@@ -4,7 +4,7 @@
     <parent>
         <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
         <artifactId>stagingdcs-parent</artifactId>
-        <version>17.100.1-SNAPSHOT</version>
+        <version>17.100.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>stagingdcs-event-processor</artifactId>
@@ -111,7 +111,7 @@
                         <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
                         <artifactId>stagingdcs-event-sources</artifactId>
                         <classifier>yaml</classifier>
-                        <version>17.100.1-SNAPSHOT</version>
+                        <version>17.100.2-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -129,7 +129,7 @@
                         <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
                         <artifactId>stagingdcs-event-sources</artifactId>
                         <classifier>yaml</classifier>
-                        <version>17.100.1-SNAPSHOT</version>
+                        <version>17.100.2-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
             </plugin>
