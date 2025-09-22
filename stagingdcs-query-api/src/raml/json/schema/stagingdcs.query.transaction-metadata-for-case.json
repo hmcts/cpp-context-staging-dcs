@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://justice.gov.uk/courts/stagingdcs/query/stagingdcs.query.transaction-metadata-for-case.json.json",
+  "type": "object",
+  "properties": {
+    "caseId": {
+      "type": "string"
+    },
+    "totalCount": {
+      "type": "integer"
+    },
+    "defendants": {
+      "description": "List of defendant status",
+      "type": "array",
+      "items": {
+        "$ref": "http://moj.gov.uk/cpp/stagingdcs/defendantDetail.json"
+      }
+    },
+    "caseOperations": {
+      "description": "List of defendant status",
+      "type": "array",
+      "items": {
+        "$ref": "http://moj.gov.uk/cpp/stagingdcs/operationDetails.json"
+      }
+    }
+  },
+  "required": [
+    "caseId",
+    "totalCount"
+  ]
+}

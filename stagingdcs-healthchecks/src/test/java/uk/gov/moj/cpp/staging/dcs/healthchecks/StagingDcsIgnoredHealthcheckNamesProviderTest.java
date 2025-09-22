@@ -5,6 +5,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.justice.services.healthcheck.healthchecks.EventStoreHealthcheck.EVENT_STORE_HEALTHCHECK_NAME;
 import static uk.gov.justice.services.healthcheck.healthchecks.ViewStoreHealthcheck.VIEW_STORE_HEALTHCHECK_NAME;
+import static uk.gov.justice.services.healthcheck.healthchecks.artemis.ArtemisHealthcheck.ARTEMIS_HEALTHCHECK_NAME;
 
 import java.util.List;
 
@@ -26,8 +27,9 @@ class StagingDcsIgnoredHealthcheckNamesProviderTest {
 
         final List<String> namesOfIgnoredHealthChecks = stagingDcsIgnoredHealthcheckNamesProvider.getNamesOfIgnoredHealthChecks();
 
-        assertThat(namesOfIgnoredHealthChecks.size(), is(2));
+        assertThat(namesOfIgnoredHealthChecks.size(), is(3));
         assertThat(namesOfIgnoredHealthChecks, hasItems(EVENT_STORE_HEALTHCHECK_NAME));
         assertThat(namesOfIgnoredHealthChecks, hasItems(VIEW_STORE_HEALTHCHECK_NAME));
+        assertThat(namesOfIgnoredHealthChecks, hasItems(ARTEMIS_HEALTHCHECK_NAME));
     }
 }

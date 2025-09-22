@@ -1,0 +1,397 @@
+{
+  "documentIndices": [
+    {
+      "caseIds": [
+        "CASE_ID"
+      ],
+      "category": "Case level",
+      "defendantIds": [],
+      "document": {
+        "containsFinancialMeans": false,
+        "courtDocumentId": "83b9956e-fa1e-4fc1-a043-eceabb4fe8fb",
+        "documentCategory": {
+          "caseDocument": {
+            "prosecutionCaseId": "CASE_ID"
+          }
+        },
+        "documentTypeDescription": "Key witness Statements",
+        "documentTypeId": "DOCUMENT_ACCESS_TYPE_ID_1",
+        "documentTypeRBAC": {
+          "deleteUserGroups": [
+            "Second Line Support"
+          ],
+          "downloadUserGroups": [
+            "District Judge",
+            "DJMC",
+            "Deputies",
+            "Defence Users",
+            "Advocates",
+            "Defence Lawyers",
+            "Probation Admin",
+            "Youth Offending Service Admin",
+            "CPS",
+            "Court Administrators",
+            "Crown Court Admin",
+            "Legal Advisers",
+            "Listing Officers",
+            "Court Clerks",
+            "Court Associate",
+            "Second Line Support",
+            "Recorders",
+            "Judge",
+            "Non CPS Prosecutors"
+          ],
+          "readUserGroups": [
+            "District Judge",
+            "DJMC",
+            "Deputies",
+            "Magistrates",
+            "Defence Users",
+            "Advocates",
+            "Defence Lawyers",
+            "Probation Admin",
+            "Youth Offending Service Admin",
+            "CPS",
+            "Court Administrators",
+            "Crown Court Admin",
+            "Legal Advisers",
+            "Listing Officers",
+            "Court Clerks",
+            "Court Associate",
+            "Second Line Support",
+            "Judge",
+            "Recorders",
+            "Non CPS Prosecutors"
+          ],
+          "uploadUserGroups": [
+            "Defence Users",
+            "Advocates",
+            "Defence Lawyers",
+            "CPS",
+            "Court Administrators",
+            "Crown Court Admin",
+            "Legal Advisers",
+            "Listing Officers",
+            "Court Clerks",
+            "Court Associate",
+            "Second Line Support",
+            "System Users",
+            "Non CPS Prosecutors"
+          ]
+        },
+        "materials": [
+          {
+            "id": "MATERIAL_ID_1",
+            "receivedDateTime": "2025-07-02T00:00:00.000Z",
+            "uploadDateTime": "2025-07-02T09:50:07.547Z",
+            "userGroups": [
+              "District Judge",
+              "DJMC",
+              "Deputies",
+              "Magistrates",
+              "Defence Users",
+              "Advocates",
+              "Defence Lawyers",
+              "Probation Admin",
+              "Youth Offending Service Admin",
+              "CPS",
+              "Court Administrators",
+              "Crown Court Admin",
+              "Legal Advisers",
+              "Listing Officers",
+              "Court Clerks",
+              "Court Associate",
+              "Second Line Support",
+              "Judge",
+              "Recorders",
+              "Non CPS Prosecutors"
+            ]
+          }
+        ],
+        "mimeType": "application/pdf",
+        "name": "IntegrationTestDocument1_Key-witness.pdf",
+        "seqNum": 50
+      },
+      "hearingIds": [],
+      "type": "Key witness Statements"
+    },
+    {
+      "caseIds": [
+        "CASE_ID",
+        "50e29412-7b6c-4fc7-a03f-ca1bfd54bf9d"
+      ],
+      "category": "NOW documents",
+      "defendantIds": [
+        "DEFENDANT_ID_1"
+      ],
+      "document": {
+        "containsFinancialMeans": false,
+        "courtDocumentId": "cfcc2c2f-c837-47dd-a035-e02c077f3aa3",
+        "documentCategory": {
+          "nowDocument": {
+            "defendantId": "DEFENDANT_ID_1",
+            "orderHearingId": "10e29412-7b6c-4fc7-a03f-ca1bfd54bf9c",
+            "prosecutionCases": [
+              "CASE_ID",
+              "50e29412-7b6c-4fc7-a03f-ca1bfd54bf9d"
+            ]
+          }
+        },
+        "documentTypeDescription": "Court Final orders",
+        "documentTypeId": "DOCUMENT_ACCESS_TYPE_ID_2",
+        "documentTypeRBAC": {
+          "downloadUserGroups": [
+            "Deputies",
+            "Crown Court Admin",
+            "Youth Offending Service Admin",
+            "Magistrates",
+            "Court Administrators",
+            "Court Associate",
+            "Police Admin",
+            "Defence Users",
+            "Legal Advisers",
+            "Victims & Witness Care Admin",
+            "Non CPS Prosecutors",
+            "Probation Admin",
+            "DJMC",
+            "Listing Officers"
+          ],
+          "readUserGroups": [
+            "Deputies",
+            "Crown Court Admin",
+            "Youth Offending Service Admin",
+            "Magistrates",
+            "Court Administrators",
+            "Court Associate",
+            "Police Admin",
+            "Defence Users",
+            "Legal Advisers",
+            "Victims & Witness Care Admin",
+            "Non CPS Prosecutors",
+            "Probation Admin",
+            "DJMC",
+            "Listing Officers"
+          ]
+        },
+        "materials": [
+          {
+            "id": "MATERIAL_ID_2",
+            "name": "Defendant - Conditional Discharge Order",
+            "uploadDateTime": "2025-07-02T16:17:31.543Z",
+            "userGroups": [
+              "Deputies",
+              "Crown Court Admin",
+              "Youth Offending Service Admin",
+              "Magistrates",
+              "Court Administrators",
+              "Court Associate",
+              "Police Admin",
+              "Defence Users",
+              "Legal Advisers",
+              "Victims & Witness Care Admin",
+              "Non CPS Prosecutors",
+              "Probation Admin",
+              "DJMC",
+              "Listing Officers"
+            ]
+          }
+        ],
+        "mimeType": "application/pdf",
+        "name": "IntegrationTestDocument2_Defendant - Conditional Discharge Order",
+        "seqNum": 270
+      },
+      "hearingIds": [
+        "10e29412-7b6c-4fc7-a03f-ca1bfd54bf9c"
+      ],
+      "type": "Court Final orders"
+    },
+    {
+      "caseIds": [
+        "CASE_ID"
+      ],
+      "category": "defendant level",
+      "defendantIds": [
+        "DEFENDANT_ID_2"
+      ],
+      "document": {
+        "containsFinancialMeans": false,
+        "courtDocumentId": "4134ce3f-6bea-4cce-b97b-9b1eddfb1ba3",
+        "documentCategory": {
+          "defendantDocument": {
+            "defendants": [
+              "DEFENDANT_ID_2",
+              "860fae22-c002-11e8-a355-529269fb1451"
+            ],
+            "prosecutionCaseId": "CASE_ID"
+          }
+        },
+        "documentTypeDescription": "Private section - Judges & HMCTS",
+        "documentTypeId": "DOCUMENT_ACCESS_TYPE_ID_3",
+        "documentTypeRBAC": {
+          "deleteUserGroups": [
+            "Second Line Support"
+          ],
+          "downloadUserGroups": [
+            "Judge",
+            "District Judge",
+            "DJMC",
+            "Deputies",
+            "Court Administrators",
+            "Crown Court Admin",
+            "Legal Advisers",
+            "Listing Officers",
+            "Court Clerks",
+            "Court Associate",
+            "Second Line Support",
+            "Recorders"
+          ],
+          "readUserGroups": [
+            "Recorders",
+            "Judge",
+            "District Judge",
+            "DJMC",
+            "Deputies",
+            "Magistrates",
+            "Court Administrators",
+            "Crown Court Admin",
+            "Legal Advisers",
+            "Listing Officers",
+            "Court Clerks",
+            "Court Associate",
+            "Second Line Support"
+          ],
+          "uploadUserGroups": [
+            "District Judge",
+            "DJMC",
+            "Deputies",
+            "Court Administrators",
+            "Crown Court Admin",
+            "Legal Advisers",
+            "Listing Officers",
+            "Court Clerks",
+            "Court Associate",
+            "Second Line Support",
+            "System Users",
+            "Recorders",
+            "Judge"
+          ]
+        },
+        "materials": [
+          {
+            "id": "MATERIAL_ID_3",
+            "receivedDateTime": "2025-07-02T09:03:30.292Z",
+            "uploadDateTime": "2025-07-02T09:03:30.420Z",
+            "userGroups": [
+              "Recorders",
+              "Judge",
+              "District Judge",
+              "DJMC",
+              "Deputies",
+              "Magistrates",
+              "Court Administrators",
+              "Crown Court Admin",
+              "Legal Advisers",
+              "Listing Officers",
+              "Court Clerks",
+              "Court Associate",
+              "Second Line Support"
+            ]
+          }
+        ],
+        "mimeType": "application/pdf",
+        "name": "IntegrationTestDocument3_RecordSheet_John Smith.pdf",
+        "seqNum": 290
+      },
+      "hearingIds": [],
+      "type": "Private section - Judges & HMCTS"
+    },
+    {
+      "caseIds": [
+        "50e29412-7b6c-4fc7-a03f-ca1bfd54bf9d"
+      ],
+      "category": "NOW documents",
+      "defendantIds": [
+        "16e29412-7b6c-4fc7-a03f-ca1bfd54bf8c"
+      ],
+      "document": {
+        "containsFinancialMeans": false,
+        "courtDocumentId": "cfcc2c2f-c837-47dd-a035-e02c077f3aa3",
+        "documentCategory": {
+          "nowDocument": {
+            "defendantId": "16e29412-7b6c-4fc7-a03f-ca1bfd54bf8c",
+            "orderHearingId": "10e29412-7b6c-4fc7-a03f-ca1bfd54bf9c",
+            "prosecutionCases": [
+              "50e29412-7b6c-4fc7-a03f-ca1bfd54bf9d"
+            ]
+          }
+        },
+        "documentTypeDescription": "Court Final orders",
+        "documentTypeId": "DOCUMENT_ACCESS_TYPE_ID_2",
+        "documentTypeRBAC": {
+          "downloadUserGroups": [
+            "Deputies",
+            "Crown Court Admin",
+            "Youth Offending Service Admin",
+            "Magistrates",
+            "Court Administrators",
+            "Court Associate",
+            "Police Admin",
+            "Defence Users",
+            "Legal Advisers",
+            "Victims & Witness Care Admin",
+            "Non CPS Prosecutors",
+            "Probation Admin",
+            "DJMC",
+            "Listing Officers"
+          ],
+          "readUserGroups": [
+            "Deputies",
+            "Crown Court Admin",
+            "Youth Offending Service Admin",
+            "Magistrates",
+            "Court Administrators",
+            "Court Associate",
+            "Police Admin",
+            "Defence Users",
+            "Legal Advisers",
+            "Victims & Witness Care Admin",
+            "Non CPS Prosecutors",
+            "Probation Admin",
+            "DJMC",
+            "Listing Officers"
+          ]
+        },
+        "materials": [
+          {
+            "id": "42e29412-7b6c-4fc7-a03f-ca1bfd54bf3a",
+            "name": "Defendant - Conditional Discharge Order",
+            "uploadDateTime": "2025-07-02T16:17:31.543Z",
+            "userGroups": [
+              "Deputies",
+              "Crown Court Admin",
+              "Youth Offending Service Admin",
+              "Magistrates",
+              "Court Administrators",
+              "Court Associate",
+              "Police Admin",
+              "Defence Users",
+              "Legal Advisers",
+              "Victims & Witness Care Admin",
+              "Non CPS Prosecutors",
+              "Probation Admin",
+              "DJMC",
+              "Listing Officers"
+            ]
+          }
+        ],
+        "mimeType": "application/pdf",
+        "name": "IntegrationTestDocument2_Defendant - Conditional Discharge Order",
+        "seqNum": 270
+      },
+      "hearingIds": [
+        "10e29412-7b6c-4fc7-a03f-ca1bfd54bf9c"
+      ],
+      "type": "Court Final orders"
+    }
+  ]
+}

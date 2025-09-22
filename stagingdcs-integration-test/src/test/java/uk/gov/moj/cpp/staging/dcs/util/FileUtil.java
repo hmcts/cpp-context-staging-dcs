@@ -1,8 +1,10 @@
 package uk.gov.moj.cpp.staging.dcs.util;
 
+import static com.google.common.io.Resources.getResource;
 import static java.lang.ClassLoader.getSystemResourceAsStream;
 import static java.lang.String.format;
 import static java.nio.charset.Charset.defaultCharset;
+import static org.apache.commons.collections.MapUtils.isNotEmpty;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.notNullValue;
@@ -13,7 +15,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UncheckedIOException;
+import java.util.Map;
 
+import com.google.common.io.Resources;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -69,5 +73,23 @@ public final class FileUtil {
             fail("Error consuming file from location " + path);
             throw new UncheckedIOException(e);
         }
+    }
+
+    public static String getJsonResponse(final String filename) {
+        try {
+            return Resources.toString(getResource(filename), defaultCharset());
+        } catch (final IOException exception) {
+            throw new UncheckedIOException(exception);
+        }
+    }
+
+    public static String getPayloadWithReplacedValues(String filePath, Map<String,String> replaceValuesString) {
+        String genericPayload = resourceToString(filePath);
+        if (isNotEmpty(replaceValuesString)) {
+            for (String key : replaceValuesString.keySet()) {
+                genericPayload = genericPayload.replaceAll(key, replaceValuesString.get(key));
+            }
+        }
+        return genericPayload;
     }
 }

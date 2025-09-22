@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/operationDetails.json",
+  "type": "object",
+  "properties": {
+    "transactionId": {
+      "type": "string"
+    },
+    "materialId": {
+      "type": "string"
+    },
+    "transactionStatus": {
+      "type": "string"
+    },
+    "transactionType": {
+      "type": "string"
+    },
+    "updatedTime": {
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/courtsDefinitions.json#/definitions/datePattern"
+    }
+  },
+  "required": [
+    "transactionId",
+    "transactionStatus",
+    "transactionType",
+    "updatedTime"
+  ],
+  "additionalProperties": false
+}

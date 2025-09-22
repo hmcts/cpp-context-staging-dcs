@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/offenceDetails.json",
+  "type": "object",
+  "description": "Offence detail",
+  "properties": {
+    "addedOffences": {
+      "type": "array",
+      "items": {
+        "$ref": "http://moj.gov.uk/cpp/stagingdcs/dcsOffence.json"
+      }
+    },
+    "removedOffences": {
+      "type": "array",
+      "items": {
+        "$ref": "http://moj.gov.uk/cpp/stagingdcs/dcsOffence.json"
+      }
+    }
+  },
+  "additionalProperties": false
+}

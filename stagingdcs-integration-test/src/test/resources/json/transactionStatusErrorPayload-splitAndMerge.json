@@ -1,0 +1,6 @@
+{
+  "errorPayload": {
+    "errorCode": "CASE_HAS_SPLIT_OR_MERGED",
+    "errorMessage": "Case is merged"
+  }
+}

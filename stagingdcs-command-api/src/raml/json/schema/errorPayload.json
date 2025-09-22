@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/errorPayload.json",
+  "type": "object",
+  "description": "This is payload structure when successful transaction is part of transaction status api",
+  "properties": {
+    "errorMessage": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Additional detailed information about the error"
+    },
+    "errorCode": {
+      "type": "string",
+      "description": "Error code for why the asynchronous API call failed",
+      "enum": [
+        "CASE_ALREADY_EXISTS",
+        "DEFENDANT_ALREADY_EXISTS",
+        "CASE_NOT_FOUND",
+        "DEFENDANT_NOT_FOUND",
+        "CASE_NOT_CREATED",
+        "DEFENDANT_NOT_CREATED",
+        "DEFENDANT_NOT_UPDATED",
+        "DOCUMENT_CONTAINS_VIRUS",
+        "CASE_HAS_SPLIT_OR_MERGED",
+        "DOCUMENT_NOT_UPLOADED"
+      ]
+    }
+  },
+  "required": [
+    "errorCode",
+    "errorMessage"
+  ],
+  "additionalProperties": false
+}

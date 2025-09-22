@@ -1,0 +1,53 @@
+{
+  "caseId": "CASE_ID",
+  "caseUrn": "CASE_URN",
+  "prosecutionAuthority": "CPS",
+  "defendants": [
+    {
+      "id": "DEFENDANT_ID1",
+      "bailStatus": "REMAND",
+      "interpreterInformation": "German",
+      "hearings": [
+        {
+          "courtCentre": "Southwark",
+          "hearingDate": "2025-01-21"
+        }
+      ],
+      "defendantPerson": {
+        "forename": "John1",
+        "surname": "SMITH1",
+        "dateOfBirth": "1970-02-03"
+      },
+      "offencesDetails": {
+        "addedOffences": [
+          {
+            "offenceId": "36a5a426-3d87-45a9-b079-0830ed0229db"
+          }
+        ]
+      }
+    },
+    {
+      "id": "DEFENDANT_ID2",
+      "bailStatus": "REMAND",
+      "interpreterInformation": "German",
+      "hearings": [
+        {
+          "courtCentre": "Southwark",
+          "hearingDate": "2025-01-22"
+        }
+      ],
+      "defendantPerson": {
+        "forename": "John2",
+        "surname": "SMITH2",
+        "dateOfBirth": "1971-02-03"
+      },
+      "offencesDetails": {
+        "addedOffences": [
+          {
+            "offenceId": "16a5a426-3d87-45a9-b079-0830ed0229dc"
+          }
+        ]
+      }
+    }
+  ]
+}

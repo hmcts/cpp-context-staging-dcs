@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/submit-dcs-case-record-request.json",
+  "description": "Information required to create a case in staging DCS",
+  "type": "object",
+  "properties": {
+    "caseId": {
+      "description": "The identifiers for the prosecution case",
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/courtsDefinitions.json#/definitions/uuid"
+    },
+    "caseUrn": {
+      "description": "URN of the case",
+      "type": "string"
+    },
+    "defendants": {
+      "description": "List of defendants for the case",
+      "type": "array",
+      "items": {
+        "$ref": "http://moj.gov.uk/cpp/stagingdcs/defendant.json"
+      }
+    },
+    "prosecutionAuthority": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "caseId",
+    "defendants",
+    "prosecutionAuthority"
+  ],
+  "additionalProperties": false
+}

@@ -12,16 +12,19 @@
             <column name="case_id" type="UUID">
                 <constraints nullable="false"/>
             </column>
-            <column name="case_urn" type="TEXT"/>
+            <column name="case_urn" type="VARCHAR(36)"/>
             <column name="case_referral_id" type="UUID"/>
             <column name="defendant_id" type="UUID" />
             <column name="defendant_referral_id" type="UUID"/>
-            <column name="dcs_case_status" type="TEXT"/>
+            <column name="dcs_defendant_status" type="VARCHAR(50)"/>
             <column name="created_at" type="DATETIME TZ"/>
             <column name="updated_at" type="DATETIME TZ"/>
         </createTable>
-        <createIndex tableName="dcs_case_detail" indexName="case_urn_idx">
-            <column name="case_urn"/>
+        <createIndex tableName="dcs_case_detail" indexName="dcs_case_detail_case_id_idx">
+            <column name="case_id"/>
+        </createIndex>
+        <createIndex tableName="dcs_case_detail" indexName="dcs_case_detail_defendant_id_idx">
+            <column name="defendant_id"/>
         </createIndex>
     </changeSet>
 

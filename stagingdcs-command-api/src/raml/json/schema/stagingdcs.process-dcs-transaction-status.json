@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/command/dcs-transaction-status.json",
+  "description": "Send status updates on transaction sent earlier",
+  "type": "object",
+  "properties": {
+    "successPayload": {
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/successPayload.json"
+    },
+    "errorPayload": {
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/errorPayload.json"
+    }
+  },
+  "oneOf": [
+    {
+      "required": [
+        "successPayload"
+      ]
+    },
+    {
+      "required": [
+        "errorPayload"
+      ]
+    }
+  ],
+  "additionalProperties": false
+}
