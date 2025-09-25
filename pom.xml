@@ -16,11 +16,11 @@
         <commons-dbutils.version>1.6</commons-dbutils.version>
         <jgitflow.maven.developBranchName>main</jgitflow.maven.developBranchName>
         <coredomain.version>17.102.11</coredomain.version>
-        <progression.version>17.0.128-STAGINGDCS-SNAPSHOT</progression.version>
+        <progression.version>17.0.189</progression.version>
         <referencedata.version>17.0.113</referencedata.version>
-        <defence.version>17.0.62-STAGINGDCS-SNAPSHOT</defence.version>
-        <usersgroups.version>17.0.35-STAGINGDCS-SNAPSHOT</usersgroups.version>
-        <material.version>17.0.61</material.version>
+        <defence.version>17.0.82</defence.version>
+        <usersgroups.version>17.0.39</usersgroups.version>
+        <material.version>17.0.70</material.version>
         <api-dcs-crime-version>0.9.3</api-dcs-crime-version>
         <api-cp-crime.version>0.3.2</api-cp-crime.version>
         <azure.storage.version>8.6.6</azure.storage.version>
