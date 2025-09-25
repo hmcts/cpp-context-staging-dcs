@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/transactionDetail.json",
+  "type": "object",
+  "properties": {
+    "transactionId": {
+      "type": "string"
+    },
+    "transactionStatus": {
+      "type": "string"
+    },
+    "transactionType": {
+      "type": "string"
+    },
+    "updatedTime": {
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/courtsDefinitions.json#/definitions/datePattern"
+    },
+    "createdTime": {
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/courtsDefinitions.json#/definitions/datePattern"
+    },
+    "payload": {
+      "description": "generic json payload object from db",
+      "type": "object"
+    },
+    "error": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "transactionId",
+    "transactionStatus",
+    "transactionType",
+    "updatedTime",
+    "createdTime"
+  ],
+  "additionalProperties": false
+}

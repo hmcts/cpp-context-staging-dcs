@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/defendantOrganisation.json",
+  "type": "object",
+  "description": "Organisation name as defendant",
+  "properties": {
+    "name": {
+      "description": "Organisation name",
+      "type": "string",
+      "maxLength": 255
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "additionalProperties": false
+}

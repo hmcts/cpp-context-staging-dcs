@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/defendantPerson.json",
+  "type": "object",
+  "description": "An individual representing the defendant",
+  "properties": {
+    "forename": {
+      "description": "The person fore name",
+      "type": "string"
+    },
+    "middleName": {
+      "description": "The person middle name",
+      "type": "string"
+    },
+    "surname": {
+      "description": "The person last name",
+      "type": "string"
+    },
+    "dateOfBirth": {
+      "description": "The person date of birth",
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/courtsDefinitions.json#/definitions/datePattern"
+    }
+  },
+  "required": [
+    "forename",
+    "surname"
+  ],
+  "additionalProperties": false
+}

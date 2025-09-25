@@ -2,8 +2,12 @@ package uk.gov.moj.cpp.staging.dcs.stub;
 
 public enum ApiRestEndpoint {
     CREATE_CASE_IN_DCS_REQUEST(
-            "/stagingdcs-command-api/command/api/rest/create-case",
-            "application/vnd.stagingdcs.create-case-defendant-file-in-dcs+json");
+            "/stagingdcs-command-api/command/api/rest/stagingdcs/create-case",
+            "application/vnd.stagingdcs.submit-dcs-case-record+json"),
+
+    PROCESS_TRANSACTION_STATUS_REQUEST(
+            "/stagingdcs-command-api/command/api/rest/stagingdcs/transaction",
+                    "application/vnd.stagingdcs.process-dcs-transaction-status+json");
 
     private final String uri;
     private final String mediaType;

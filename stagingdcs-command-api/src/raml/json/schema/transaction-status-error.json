@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/transaction-status-error.json",
+  "type": "object",
+  "description": "Offence detail",
+  "properties": {
+    "errorMessage": {
+      "type": "string"
+    },
+    "transactionRef": {
+      "description": "offence identifier",
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/courtsDefinitions.json#/definitions/uuid"
+    }
+  },
+  "required": [
+    "transactionRef",
+    "errorMessage"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,967 @@
+{
+  "documentsTypeAccess": [
+    {
+      "id": "DOCUMENT_ACCESS_TYPE_ID_1",
+      "documentCategory": "Case level",
+      "section": "Indictment",
+      "sectionCode": "IN",
+      "seqNum": 20,
+      "actionRequired": false,
+      "notifyDefence": true,
+      "defenceOnly": false,
+      "sendToDcs": true,
+      "jurisdiction": "Crown",
+      "sentToCps": false,
+      "courtDocumentTypeRBAC": {
+        "readUserGroups": [
+          {
+            "cppGroup": {
+              "id": "e5419808-1fea-4564-b273-29834f6b95a2",
+              "groupName": "Recorders"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "d8241d10-1567-4d73-8444-80107980b401",
+              "groupName": "Defence Users"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "8d365984-0643-4b1a-81c6-3a0f7b750ddf",
+              "groupName": "Advocates"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "693e08e2-e1b3-4919-b7a5-9a69c3ba250d",
+              "groupName": "Defence Lawyers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "af6af4d6-dc7b-4881-9613-3508fba98f83",
+              "groupName": "CPS"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "53292fc8-d164-4a6c-8722-cdbc795cf83a",
+              "groupName": "Court Administrators"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "78e7f119-5778-43ff-8f99-97164b17700e",
+              "groupName": "Crown Court Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "63cae459-0e51-4d60-bcf8-c5324be50ba4",
+              "groupName": "Legal Advisers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "38e3f119-5998-43ff-8f99-97164b18400d",
+              "groupName": "Listing Officers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "b6a117cb-c284-4103-958d-34ffcf200b24",
+              "groupName": "Court Clerks"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "ebcfdd9c-9605-4fbf-b9f3-85f8cfdd11bb",
+              "groupName": "Court Associate"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "85a02c4c-7eda-4e45-ac8a-023888041b16",
+              "groupName": "Second Line Support"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "e54c087a-ff26-4088-ad2b-040a0182cd1a",
+              "groupName": "Judge"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "7487eff6-c8e7-4af7-98c3-5fb41d8e7200",
+              "groupName": "Non CPS Prosecutors"
+            }
+          }
+        ],
+        "uploadUserGroups": [
+          {
+            "cppGroup": {
+              "id": "af6af4d6-dc7b-4881-9613-3508fba98f83",
+              "groupName": "CPS"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "53292fc8-d164-4a6c-8722-cdbc795cf83a",
+              "groupName": "Court Administrators"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "78e7f119-5778-43ff-8f99-97164b17700e",
+              "groupName": "Crown Court Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "63cae459-0e51-4d60-bcf8-c5324be50ba4",
+              "groupName": "Legal Advisers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "38e3f119-5998-43ff-8f99-97164b18400d",
+              "groupName": "Listing Officers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "b6a117cb-c284-4103-958d-34ffcf200b24",
+              "groupName": "Court Clerks"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "ebcfdd9c-9605-4fbf-b9f3-85f8cfdd11bb",
+              "groupName": "Court Associate"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "85a02c4c-7eda-4e45-ac8a-023888041b16",
+              "groupName": "Second Line Support"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "2a2d7e9e-0c60-11e6-a148-3e1d05defe78",
+              "groupName": "System Users"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "7487eff6-c8e7-4af7-98c3-5fb41d8e7200",
+              "groupName": "Non CPS Prosecutors"
+            }
+          }
+        ],
+        "downloadUserGroups": [
+          {
+            "cppGroup": {
+              "id": "d8241d10-1567-4d73-8444-80107980b401",
+              "groupName": "Defence Users"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "8d365984-0643-4b1a-81c6-3a0f7b750ddf",
+              "groupName": "Advocates"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "693e08e2-e1b3-4919-b7a5-9a69c3ba250d",
+              "groupName": "Defence Lawyers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "af6af4d6-dc7b-4881-9613-3508fba98f83",
+              "groupName": "CPS"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "53292fc8-d164-4a6c-8722-cdbc795cf83a",
+              "groupName": "Court Administrators"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "78e7f119-5778-43ff-8f99-97164b17700e",
+              "groupName": "Crown Court Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "63cae459-0e51-4d60-bcf8-c5324be50ba4",
+              "groupName": "Legal Advisers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "38e3f119-5998-43ff-8f99-97164b18400d",
+              "groupName": "Listing Officers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "b6a117cb-c284-4103-958d-34ffcf200b24",
+              "groupName": "Court Clerks"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "ebcfdd9c-9605-4fbf-b9f3-85f8cfdd11bb",
+              "groupName": "Court Associate"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "85a02c4c-7eda-4e45-ac8a-023888041b16",
+              "groupName": "Second Line Support"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "e54c087a-ff26-4088-ad2b-040a0182cd1a",
+              "groupName": "Judge"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "e5419808-1fea-4564-b273-29834f6b95a2",
+              "groupName": "Recorders"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "7487eff6-c8e7-4af7-98c3-5fb41d8e7200",
+              "groupName": "Non CPS Prosecutors"
+            }
+          }
+        ],
+        "deleteUserGroups": [
+          {
+            "cppGroup": {
+              "id": "85a02c4c-7eda-4e45-ac8a-023888041b16",
+              "groupName": "Second Line Support"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "DOCUMENT_ACCESS_TYPE_ID_2",
+      "documentCategory": "Defendant level",
+      "section": "Charges",
+      "sectionCode": "CH",
+      "seqNum": 30,
+      "actionRequired": false,
+      "notifyDefence": true,
+      "defenceOnly": false,
+      "sendToDcs": true,
+      "jurisdiction": "Mags/Crown",
+      "sentToCps": false,
+      "courtDocumentTypeRBAC": {
+        "readUserGroups": [
+          {
+            "cppGroup": {
+              "id": "e54c087a-ff26-4088-ad2b-040a0182cd1a",
+              "groupName": "Judge"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "341ca32a-daa9-4bc9-b491-33e04ca950f2",
+              "groupName": "District Judge"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "81d4ac7d-6841-4af4-8bb4-917a62239f64",
+              "groupName": "DJMC"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "ab55768a-865d-4f69-b0d1-bb090b9745df",
+              "groupName": "Deputies"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "1c8deffd-15cb-40dc-9f5f-af72a01f3c75",
+              "groupName": "Magistrates"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "d8241d10-1567-4d73-8444-80107980b401",
+              "groupName": "Defence Users"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "8d365984-0643-4b1a-81c6-3a0f7b750ddf",
+              "groupName": "Advocates"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "693e08e2-e1b3-4919-b7a5-9a69c3ba250d",
+              "groupName": "Defence Lawyers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "d231b119-d748-46da-89fc-293edf114e16",
+              "groupName": "Probation Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "b4ab816b-5714-4c7a-b59f-eb980e3c8946",
+              "groupName": "Youth Offending Service Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "53292fc8-d164-4a6c-8722-cdbc795cf83a",
+              "groupName": "Court Administrators"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "78e7f119-5778-43ff-8f99-97164b17700e",
+              "groupName": "Crown Court Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "63cae459-0e51-4d60-bcf8-c5324be50ba4",
+              "groupName": "Legal Advisers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "38e3f119-5998-43ff-8f99-97164b18400d",
+              "groupName": "Listing Officers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "b6a117cb-c284-4103-958d-34ffcf200b24",
+              "groupName": "Court Clerks"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "ebcfdd9c-9605-4fbf-b9f3-85f8cfdd11bb",
+              "groupName": "Court Associate"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "85a02c4c-7eda-4e45-ac8a-023888041b16",
+              "groupName": "Second Line Support"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "e5419808-1fea-4564-b273-29834f6b95a2",
+              "groupName": "Recorders"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "af6af4d6-dc7b-4881-9613-3508fba98f83",
+              "groupName": "CPS"
+            },
+            "validFrom": "2021-05-17"
+          },
+          {
+            "cppGroup": {
+              "id": "b3771470-723f-11ed-a1eb-0242ac120002",
+              "groupName": "Non Police Prosecutors"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "3b956811-e4e1-431d-b56a-7fd6ee6d49d2",
+              "groupName": "Police Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "0921da5b-e495-430c-8cb7-17b17da3246f",
+              "groupName": "SJP Prosecutors"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "7487eff6-c8e7-4af7-98c3-5fb41d8e7200",
+              "groupName": "Non CPS Prosecutors"
+            }
+          }
+        ],
+        "uploadUserGroups": [
+          {
+            "cppGroup": {
+              "id": "af6af4d6-dc7b-4881-9613-3508fba98f83",
+              "groupName": "CPS"
+            },
+            "validFrom": "2021-05-17"
+          },
+          {
+            "cppGroup": {
+              "id": "53292fc8-d164-4a6c-8722-cdbc795cf83a",
+              "groupName": "Court Administrators"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "78e7f119-5778-43ff-8f99-97164b17700e",
+              "groupName": "Crown Court Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "63cae459-0e51-4d60-bcf8-c5324be50ba4",
+              "groupName": "Legal Advisers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "38e3f119-5998-43ff-8f99-97164b18400d",
+              "groupName": "Listing Officers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "b6a117cb-c284-4103-958d-34ffcf200b24",
+              "groupName": "Court Clerks"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "ebcfdd9c-9605-4fbf-b9f3-85f8cfdd11bb",
+              "groupName": "Court Associate"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "85a02c4c-7eda-4e45-ac8a-023888041b16",
+              "groupName": "Second Line Support"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "2a2d7e9e-0c60-11e6-a148-3e1d05defe78",
+              "groupName": "System Users"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "b3771470-723f-11ed-a1eb-0242ac120002",
+              "groupName": "Non Police Prosecutors"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "3b956811-e4e1-431d-b56a-7fd6ee6d49d2",
+              "groupName": "Police Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "0921da5b-e495-430c-8cb7-17b17da3246f",
+              "groupName": "SJP Prosecutors"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "7487eff6-c8e7-4af7-98c3-5fb41d8e7200",
+              "groupName": "Non CPS Prosecutors"
+            }
+          }
+        ],
+        "downloadUserGroups": [
+          {
+            "cppGroup": {
+              "id": "e5419808-1fea-4564-b273-29834f6b95a2",
+              "groupName": "Recorders"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "e54c087a-ff26-4088-ad2b-040a0182cd1a",
+              "groupName": "Judge"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "341ca32a-daa9-4bc9-b491-33e04ca950f2",
+              "groupName": "District Judge"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "81d4ac7d-6841-4af4-8bb4-917a62239f64",
+              "groupName": "DJMC"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "ab55768a-865d-4f69-b0d1-bb090b9745df",
+              "groupName": "Deputies"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "d8241d10-1567-4d73-8444-80107980b401",
+              "groupName": "Defence Users"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "8d365984-0643-4b1a-81c6-3a0f7b750ddf",
+              "groupName": "Advocates"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "693e08e2-e1b3-4919-b7a5-9a69c3ba250d",
+              "groupName": "Defence Lawyers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "d231b119-d748-46da-89fc-293edf114e16",
+              "groupName": "Probation Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "b4ab816b-5714-4c7a-b59f-eb980e3c8946",
+              "groupName": "Youth Offending Service Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "53292fc8-d164-4a6c-8722-cdbc795cf83a",
+              "groupName": "Court Administrators"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "78e7f119-5778-43ff-8f99-97164b17700e",
+              "groupName": "Crown Court Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "63cae459-0e51-4d60-bcf8-c5324be50ba4",
+              "groupName": "Legal Advisers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "38e3f119-5998-43ff-8f99-97164b18400d",
+              "groupName": "Listing Officers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "b6a117cb-c284-4103-958d-34ffcf200b24",
+              "groupName": "Court Clerks"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "ebcfdd9c-9605-4fbf-b9f3-85f8cfdd11bb",
+              "groupName": "Court Associate"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "85a02c4c-7eda-4e45-ac8a-023888041b16",
+              "groupName": "Second Line Support"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "af6af4d6-dc7b-4881-9613-3508fba98f83",
+              "groupName": "CPS"
+            },
+            "validFrom": "2021-05-17"
+          },
+          {
+            "cppGroup": {
+              "id": "b3771470-723f-11ed-a1eb-0242ac120002",
+              "groupName": "Non Police Prosecutors"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "3b956811-e4e1-431d-b56a-7fd6ee6d49d2",
+              "groupName": "Police Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "0921da5b-e495-430c-8cb7-17b17da3246f",
+              "groupName": "SJP Prosecutors"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "7487eff6-c8e7-4af7-98c3-5fb41d8e7200",
+              "groupName": "Non CPS Prosecutors"
+            }
+          }
+        ],
+        "deleteUserGroups": [
+          {
+            "cppGroup": {
+              "id": "85a02c4c-7eda-4e45-ac8a-023888041b16",
+              "groupName": "Second Line Support"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "DOCUMENT_ACCESS_TYPE_ID_3",
+      "documentCategory": "Case level",
+      "section": "Case Summary",
+      "sectionCode": "CS",
+      "seqNum": 40,
+      "actionRequired": false,
+      "notifyDefence": false,
+      "defenceOnly": false,
+      "sendToDcs": true,
+      "jurisdiction": "Mags/Crown",
+      "sentToCps": false,
+      "courtDocumentTypeRBAC": {
+        "readUserGroups": [
+          {
+            "cppGroup": {
+              "id": "341ca32a-daa9-4bc9-b491-33e04ca950f2",
+              "groupName": "District Judge"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "81d4ac7d-6841-4af4-8bb4-917a62239f64",
+              "groupName": "DJMC"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "ab55768a-865d-4f69-b0d1-bb090b9745df",
+              "groupName": "Deputies"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "1c8deffd-15cb-40dc-9f5f-af72a01f3c75",
+              "groupName": "Magistrates"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "d8241d10-1567-4d73-8444-80107980b401",
+              "groupName": "Defence Users"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "8d365984-0643-4b1a-81c6-3a0f7b750ddf",
+              "groupName": "Advocates"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "693e08e2-e1b3-4919-b7a5-9a69c3ba250d",
+              "groupName": "Defence Lawyers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "d231b119-d748-46da-89fc-293edf114e16",
+              "groupName": "Probation Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "b4ab816b-5714-4c7a-b59f-eb980e3c8946",
+              "groupName": "Youth Offending Service Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "53292fc8-d164-4a6c-8722-cdbc795cf83a",
+              "groupName": "Court Administrators"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "78e7f119-5778-43ff-8f99-97164b17700e",
+              "groupName": "Crown Court Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "63cae459-0e51-4d60-bcf8-c5324be50ba4",
+              "groupName": "Legal Advisers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "38e3f119-5998-43ff-8f99-97164b18400d",
+              "groupName": "Listing Officers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "b6a117cb-c284-4103-958d-34ffcf200b24",
+              "groupName": "Court Clerks"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "ebcfdd9c-9605-4fbf-b9f3-85f8cfdd11bb",
+              "groupName": "Court Associate"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "85a02c4c-7eda-4e45-ac8a-023888041b16",
+              "groupName": "Second Line Support"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "e54c087a-ff26-4088-ad2b-040a0182cd1a",
+              "groupName": "Judge"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "e5419808-1fea-4564-b273-29834f6b95a2",
+              "groupName": "Recorders"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "af6af4d6-dc7b-4881-9613-3508fba98f83",
+              "groupName": "CPS"
+            },
+            "validFrom": "2021-05-17"
+          },
+          {
+            "cppGroup": {
+              "id": "7487eff6-c8e7-4af7-98c3-5fb41d8e7200",
+              "groupName": "Non CPS Prosecutors"
+            }
+          }
+        ],
+        "uploadUserGroups": [
+          {
+            "cppGroup": {
+              "id": "af6af4d6-dc7b-4881-9613-3508fba98f83",
+              "groupName": "CPS"
+            },
+            "validFrom": "2021-05-17"
+          },
+          {
+            "cppGroup": {
+              "id": "53292fc8-d164-4a6c-8722-cdbc795cf83a",
+              "groupName": "Court Administrators"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "78e7f119-5778-43ff-8f99-97164b17700e",
+              "groupName": "Crown Court Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "63cae459-0e51-4d60-bcf8-c5324be50ba4",
+              "groupName": "Legal Advisers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "38e3f119-5998-43ff-8f99-97164b18400d",
+              "groupName": "Listing Officers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "b6a117cb-c284-4103-958d-34ffcf200b24",
+              "groupName": "Court Clerks"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "ebcfdd9c-9605-4fbf-b9f3-85f8cfdd11bb",
+              "groupName": "Court Associate"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "85a02c4c-7eda-4e45-ac8a-023888041b16",
+              "groupName": "Second Line Support"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "2a2d7e9e-0c60-11e6-a148-3e1d05defe78",
+              "groupName": "System Users"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "7487eff6-c8e7-4af7-98c3-5fb41d8e7200",
+              "groupName": "Non CPS Prosecutors"
+            }
+          }
+        ],
+        "downloadUserGroups": [
+          {
+            "cppGroup": {
+              "id": "341ca32a-daa9-4bc9-b491-33e04ca950f2",
+              "groupName": "District Judge"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "81d4ac7d-6841-4af4-8bb4-917a62239f64",
+              "groupName": "DJMC"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "ab55768a-865d-4f69-b0d1-bb090b9745df",
+              "groupName": "Deputies"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "d8241d10-1567-4d73-8444-80107980b401",
+              "groupName": "Defence Users"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "8d365984-0643-4b1a-81c6-3a0f7b750ddf",
+              "groupName": "Advocates"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "693e08e2-e1b3-4919-b7a5-9a69c3ba250d",
+              "groupName": "Defence Lawyers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "d231b119-d748-46da-89fc-293edf114e16",
+              "groupName": "Probation Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "b4ab816b-5714-4c7a-b59f-eb980e3c8946",
+              "groupName": "Youth Offending Service Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "53292fc8-d164-4a6c-8722-cdbc795cf83a",
+              "groupName": "Court Administrators"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "78e7f119-5778-43ff-8f99-97164b17700e",
+              "groupName": "Crown Court Admin"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "63cae459-0e51-4d60-bcf8-c5324be50ba4",
+              "groupName": "Legal Advisers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "38e3f119-5998-43ff-8f99-97164b18400d",
+              "groupName": "Listing Officers"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "b6a117cb-c284-4103-958d-34ffcf200b24",
+              "groupName": "Court Clerks"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "ebcfdd9c-9605-4fbf-b9f3-85f8cfdd11bb",
+              "groupName": "Court Associate"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "85a02c4c-7eda-4e45-ac8a-023888041b16",
+              "groupName": "Second Line Support"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "e5419808-1fea-4564-b273-29834f6b95a2",
+              "groupName": "Recorders"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "af6af4d6-dc7b-4881-9613-3508fba98f83",
+              "groupName": "CPS"
+            },
+            "validFrom": "2021-05-17"
+          },
+          {
+            "cppGroup": {
+              "id": "e54c087a-ff26-4088-ad2b-040a0182cd1a",
+              "groupName": "Judge"
+            }
+          },
+          {
+            "cppGroup": {
+              "id": "7487eff6-c8e7-4af7-98c3-5fb41d8e7200",
+              "groupName": "Non CPS Prosecutors"
+            }
+          }
+        ],
+        "deleteUserGroups": [
+          {
+            "cppGroup": {
+              "id": "85a02c4c-7eda-4e45-ac8a-023888041b16",
+              "groupName": "Second Line Support"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

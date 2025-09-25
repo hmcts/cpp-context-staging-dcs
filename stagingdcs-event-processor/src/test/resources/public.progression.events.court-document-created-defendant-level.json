@@ -1,0 +1,78 @@
+{
+  "courtDocument": {
+    "containsFinancialMeans": false,
+    "courtDocumentId": "cfcc2c2f-c837-47dd-a035-e02c077f3aa3",
+    "documentCategory": {
+      "nowDocument": {
+        "defendantId": "DEFENDANT_ID",
+        "orderHearingId": "10e29412-7b6c-4fc7-a03f-ca1bfd54bf9c",
+        "prosecutionCases": [
+          "CASE_ID",
+          "40e29412-7b6c-4fc7-a03f-ca1bfd54bf9a"
+        ]
+      }
+    },
+    "documentTypeDescription": "Court Final orders",
+    "documentTypeId": "DOCUMENT_TYPE_ID",
+    "documentTypeRBAC": {
+      "downloadUserGroups": [
+        "Deputies",
+        "Crown Court Admin",
+        "Youth Offending Service Admin",
+        "Magistrates",
+        "Court Administrators",
+        "Court Associate",
+        "Police Admin",
+        "Defence Users",
+        "Legal Advisers",
+        "Victims & Witness Care Admin",
+        "Non CPS Prosecutors",
+        "Probation Admin",
+        "DJMC",
+        "Listing Officers"
+      ],
+      "readUserGroups": [
+        "Deputies",
+        "Crown Court Admin",
+        "Youth Offending Service Admin",
+        "Magistrates",
+        "Court Administrators",
+        "Court Associate",
+        "Police Admin",
+        "Defence Users",
+        "Legal Advisers",
+        "Victims & Witness Care Admin",
+        "Non CPS Prosecutors",
+        "Probation Admin",
+        "DJMC",
+        "Listing Officers"
+      ]
+    },
+    "materials": [
+      {
+        "id": "MATERIAL_ID",
+        "name": "Defendant - Conditional Discharge Order",
+        "uploadDateTime": "2025-07-02T16:17:31.543Z",
+        "userGroups": [
+          "Deputies",
+          "Crown Court Admin",
+          "Youth Offending Service Admin",
+          "Magistrates",
+          "Court Administrators",
+          "Court Associate",
+          "Police Admin",
+          "Defence Users",
+          "Legal Advisers",
+          "Victims & Witness Care Admin",
+          "Non CPS Prosecutors",
+          "Probation Admin",
+          "DJMC",
+          "Listing Officers"
+        ]
+      }
+    ],
+    "mimeType": "application/pdf",
+    "name": "Defendant - Conditional Discharge Order",
+    "seqNum": 270
+  }
+}

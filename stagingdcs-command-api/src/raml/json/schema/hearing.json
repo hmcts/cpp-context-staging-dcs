@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/hearing.json",
+  "type": "object",
+  "description": "Offence detail",
+  "properties": {
+    "hearingDate": {
+      "description": "Date of the hearing",
+      "type": "string",
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/courtsDefinitions.json#/definitions/datePattern"
+    },
+    "courtCentre": {
+      "description": "Court centre name where the case was heard",
+      "type": "string"
+    }
+  },
+  "required": [
+    "courtCentre"
+  ],
+  "additionalProperties": false
+}

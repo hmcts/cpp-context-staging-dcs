@@ -1,0 +1,12 @@
+{
+  "transactionRef": "d9fe4c51-1783-4fe4-a2b4-7c0e25905483",
+  "caseId": "d9fe4c51-1783-4fe4-a2b4-7c0e25905484",
+  "caseReferral": "d9fe4c51-1783-4fe4-a2b4-7c0e25905484",
+  "defendants": [
+    {
+      "defendantId": "d9fe4c51-1783-4fe4-a2b4-7c0e25905484",
+      "defendantReferral": "d9fe4c51-1783-4fe4-a2b4-7c0e25905484"
+    }
+  ],
+  "status": "success"
+}

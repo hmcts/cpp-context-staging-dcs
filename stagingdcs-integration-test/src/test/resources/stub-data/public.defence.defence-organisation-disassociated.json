@@ -1,0 +1,33 @@
+{
+  "caseId": "CASE_ID",
+  "defendantId": "DEFENDANT_ID",
+  "endDate": "2025-06-26T15:42:22.491Z",
+  "organisationId": "ORGANISATION_ID",
+  "permissions": [
+    {
+      "action": "View",
+      "id": "fc423763-da27-44b6-a0f3-c20b58be483d",
+      "object": "DefendantDocuments",
+      "source": "1fc69990-bf59-4c4a-9489-d766b9abde9a",
+      "status": "Deleted",
+      "target": "69f7106d-0530-440d-a472-5806a6c74c6c"
+    },
+    {
+      "action": "Upload",
+      "id": "254e1649-143c-4b07-a8eb-2ad08dc626c5",
+      "object": "DefendantDocuments",
+      "source": "1fc69990-bf59-4c4a-9489-d766b9abde9a",
+      "status": "Deleted",
+      "target": "69f7106d-0530-440d-a472-5806a6c74c6c"
+    },
+    {
+      "action": "View",
+      "id": "ac0d46f6-834b-42a6-ada1-60a63267e1c0",
+      "object": "DefenceClient",
+      "source": "1fc69990-bf59-4c4a-9489-d766b9abde9a",
+      "status": "Deleted",
+      "target": "69f7106d-0530-440d-a472-5806a6c74c6c"
+    }
+  ],
+  "userId": "fba5005d-13db-4658-8d3c-a3fdfc1fb9d9"
+}

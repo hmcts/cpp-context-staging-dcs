@@ -33,14 +33,14 @@ public class DcsCaseDetailEntity implements Serializable {
     @Column(name = "defendant_referral_id")
     private UUID defendantRefId;
 
-    @Column(name = "dcs_case_status")
-    private String dcsCaseStatus;
+    @Column(name = "dcs_defendant_status")
+    private String dcsDefendantStatus;
 
     @Column(name = "created_at")
     private ZonedDateTime createdAt;
 
     @Column(name = "updated_at")
-    private ZonedDateTime lastUpdatedAt;
+    private ZonedDateTime updatedAt;
 
     public UUID getId() {
         return id;
@@ -90,12 +90,12 @@ public class DcsCaseDetailEntity implements Serializable {
         this.defendantRefId = defendantRefId;
     }
 
-    public String getDcsCaseStatus() {
-        return dcsCaseStatus;
+    public String getDcsDefendantStatus() {
+        return dcsDefendantStatus;
     }
 
-    public void setDcsCaseStatus(final String dcsCaseStatus) {
-        this.dcsCaseStatus = dcsCaseStatus;
+    public void setDcsDefendantStatus(final String dcsDefendantStatus) {
+        this.dcsDefendantStatus = dcsDefendantStatus;
     }
 
     public ZonedDateTime getCreatedAt() {
@@ -106,11 +106,11 @@ public class DcsCaseDetailEntity implements Serializable {
         this.createdAt = createdAt;
     }
 
-    public ZonedDateTime getLastUpdatedAt() {
-        return lastUpdatedAt;
+    public ZonedDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setLastUpdatedAt(final ZonedDateTime lastUpdatedAt) {
-        this.lastUpdatedAt = lastUpdatedAt;
+    public void setUpdatedAt(final ZonedDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
