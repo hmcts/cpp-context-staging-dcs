@@ -4,7 +4,7 @@
     <parent>
         <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
         <artifactId>stagingdcs-persistence</artifactId>
-        <version>17.101.1-SNAPSHOT</version>
+        <version>17.101.1</version>
     </parent>
 
     <artifactId>stagingdcs-persistence-api</artifactId>
