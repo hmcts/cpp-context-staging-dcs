@@ -99,7 +99,6 @@ public class DefendantUpdateTask extends BaseTask implements ExecutableTask {
         final String transactionRef = jobData.getString(TRANSACTION_REF);
 
         final ProsecutionCase prosecutionCase = prosecutionCaseHelper.getProsecutionCase(metadataObject, UUID.fromString(caseId));
-        logger.info("-----buildDefendant-------");
         Defendant apiDefendant = buildDefendant(prosecutionCase, defendantId);
 
         final boolean isDefendantAlreadyPresent = isDefendantAlreadyPresent(apiDefendant, defendantId);
@@ -189,18 +188,15 @@ public class DefendantUpdateTask extends BaseTask implements ExecutableTask {
             prosecutionCase.defendants().stream()
                     .filter(defendant -> defendant.id().equals(UUID.fromString(defendantId)))
                     .findFirst().ifPresent(defendant -> {
-                        logger.info("--------------buildDefendant for defendantId:{}", defendantId);
                         apiDefendant.setId(defendantId);
 
                         if (defendant.personDefendant() != null) {
-                            logger.info("--------------personDefendant---------");
                             DefendantPerson personInfo = getPersonInfo(defendant);
                             apiDefendant.setDefendantPerson(personInfo);
-                            logger.info("--------------personInfo updated---------");
                             apiDefendant.setInterpreterInformation(defendant.personDefendant().personDetails().interpreterLanguageNeeds());
-                            logger.info("--------------interpreterLanguageNeeds updated---------");
-                            apiDefendant.setBailStatus(defendant.personDefendant().bailStatus().description());
-                            logger.info("--------------personDefendant updated---------");
+                            if (nonNull(defendant.personDefendant().bailStatus())) {
+                                apiDefendant.setBailStatus(defendant.personDefendant().bailStatus().description());
+                            }
                         }
 
                         if (defendant.legalEntityDefendant() != null) {
