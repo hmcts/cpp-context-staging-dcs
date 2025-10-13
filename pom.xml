@@ -16,7 +16,7 @@
         <commons-dbutils.version>1.6</commons-dbutils.version>
         <jgitflow.maven.developBranchName>main</jgitflow.maven.developBranchName>
         <coredomain.version>17.102.11</coredomain.version>
-        <progression.version>17.0.189</progression.version>
+        <progression.version>17.0.193</progression.version>
         <referencedata.version>17.0.113</referencedata.version>
         <defence.version>17.0.82</defence.version>
         <usersgroups.version>17.0.39</usersgroups.version>
