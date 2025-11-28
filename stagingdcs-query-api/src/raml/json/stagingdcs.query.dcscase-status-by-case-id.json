@@ -1,0 +1,42 @@
+{
+  "caseId": "c0fe4c51-1783-4fe4-a2b4-7c0e25905484",
+  "caseStatus": "LINKED TO DCS",
+  "defendants": [
+    {
+      "defendantId": "d0fe4c51-1783-4fe4-a2b4-7c0e25905480",
+      "defendantStatus": "LINKED TO DCS",
+      "latestDefendantOperations": [
+        {
+          "transactionId": "a0fe4c51-1783-4fe4-a2b4-7c0e25905481",
+          "status": "DCS UPDATED",
+          "type": "defendant-details",
+          "updatedTime": "2025-08-27T11:00:00.000Z"
+        },
+        {
+          "transactionId": "a0fe4c51-1783-4fe4-a2b4-7c0e25905482",
+          "status": "DCS UPDATED",
+          "type": "defendant-defence",
+          "updatedTime": "2025-08-27T11:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "defendantId": "b0fe4c51-1783-4fe4-a2b4-7c0e25905489",
+      "defendantStatus": "NOT UPDATED TO DCS",
+      "latestDefendantOperations": [
+        {
+          "transactionId": "a0fe4c51-1783-4fe4-a2b4-7c0e25905483",
+          "status": "DCS NOT UPDATED",
+          "type": "defendant-details",
+          "updatedTime": "2025-08-27T11:00:00.000Z"
+        },
+        {
+          "transactionId": "a0fe4c51-1783-4fe4-a2b4-7c0e25905484",
+          "status": "DCS UPDATED",
+          "type": "defendant-defence",
+          "updatedTime": "2025-08-27T11:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}

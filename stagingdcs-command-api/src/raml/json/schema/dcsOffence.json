@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/dcsOffence.json",
+  "type": "object",
+  "description": "Offence detail",
+  "properties": {
+    "offenceCode": {
+      "type": "string"
+    },
+    "offenceId": {
+      "description": "offence identifier",
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/courtsDefinitions.json#/definitions/uuid"
+    }
+  },
+  "required": [
+    "offenceId"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,44 @@
+package uk.gov.moj.cpp.staging.dcs.queryapi.accesscontrol;
+
+import uk.gov.moj.cpp.accesscontrol.drools.Outcome;
+import uk.gov.moj.cpp.accesscontrol.drools.Action;
+import uk.gov.moj.cpp.staging.dcs.query.api.accesscontrol.RuleConstants;
+import java.util.Arrays;
+
+global uk.gov.moj.cpp.accesscontrol.common.providers.UserAndGroupProvider userAndGroupProvider;
+
+rule "Query - API - stagingdcs.query.dcscase-status-by-case-id"
+  when
+    $outcome: Outcome();
+    $action: Action(name == "stagingdcs.query.dcscase-status-by-case-id");
+    eval(userAndGroupProvider.isMemberOfAnyOfTheSuppliedGroups($action, "Judiciary", "Listing Officers", "Legal Advisers", "Court Associate", "Court Clerks", "NCES", "CPS", "Probation Admin", "Youth Offending Service Admin", "Court Administrators", "Crown Court Admin", "Judge", "Police Admin","Recorders","DJMC","Deputies","Victims & Witness Care Admin", "System Users","Advocates","Defence Lawyers"))
+  then
+    $outcome.setSuccess(true);
+end
+
+rule "Query - API - stagingdcs.query.dcscase-status-by-case-id-defendant-id"
+  when
+    $outcome: Outcome();
+    $action: Action(name == "stagingdcs.query.dcscase-status-by-case-id-defendant-id");
+    eval(userAndGroupProvider.isMemberOfAnyOfTheSuppliedGroups($action, "Judiciary", "Listing Officers", "Legal Advisers", "Court Associate", "Court Clerks", "NCES", "CPS", "Probation Admin", "Youth Offending Service Admin", "Court Administrators", "Crown Court Admin", "Judge", "Police Admin","Recorders","DJMC","Deputies","Victims & Witness Care Admin", "System Users","Advocates","Defence Lawyers"))
+  then
+    $outcome.setSuccess(true);
+end
+
+rule "Query - API - stagingdcs.query.transaction-metadata-for-case"
+  when
+    $outcome: Outcome();
+    $action: Action(name == "stagingdcs.query.transaction-metadata-for-case");
+    eval(userAndGroupProvider.isMemberOfAnyOfTheSuppliedGroups($action, "System Users"))
+  then
+    $outcome.setSuccess(true);
+end
+
+rule "Query - API - stagingdcs.query.transaction-detail"
+  when
+    $outcome: Outcome();
+    $action: Action(name == "stagingdcs.query.transaction-detail");
+    eval(userAndGroupProvider.isMemberOfAnyOfTheSuppliedGroups($action, "System Users"))
+  then
+    $outcome.setSuccess(true);
+end

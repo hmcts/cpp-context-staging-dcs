@@ -1,0 +1,73 @@
+{
+  "caseId": "edd47c1b-e968-4ec4-99c4-20ac04b1f2a5",
+  "totalCount": 50,
+  "defendants": [
+    {
+      "defendantId": "ec42a8b6-5c35-498e-ae24-be18e5fa29fe",
+      "defendantOperations": [
+        {
+          "transactionId": "a23131b6-3f26-4608-a653-3964d66aa604",
+          "transactionStatus": "SUCCESS",
+          "transactionType": "LINK_DEFENDANT",
+          "updatedTime": "2025-06-26T10:13:30.927Z"
+        },
+        {
+          "transactionId": "74dad662-661e-49ba-8558-6dbc1bd37727",
+          "transactionStatus": "SUCCESS",
+          "transactionType": "LINK_DEFENDANT",
+          "updatedTime": "2025-06-26T10:13:30.927Z"
+        },
+        {
+          "transactionId": "e42f4dd7-b0a9-431d-871b-6a4724899dbf",
+          "transactionStatus": "SUCCESS",
+          "transactionType": "LINK_DEFENDANT",
+          "updatedTime": "2025-06-26T10:13:30.927Z"
+        },
+        {
+          "transactionId": "68304ce4-9c61-44da-b88d-515d90ae9fcc",
+          "transactionStatus": "SUCCESS",
+          "transactionType": "LINK_DEFENDANT",
+          "updatedTime": "2025-06-26T10:13:30.927Z"
+        },
+        {
+          "transactionId": "9dc46a4b-c686-4c22-a5bd-7842263e2e5d",
+          "transactionStatus": "SUCCESS",
+          "transactionType": "LINK_DEFENDANT",
+          "updatedTime": "2025-06-26T10:13:30.928Z"
+        }
+      ]
+    }
+  ],
+  "caseOperations": [
+    {
+      "transactionId": "28bf9a55-4b66-4179-888b-49b4f5c88ae4",
+      "transactionStatus": "SUCCESS",
+      "transactionType": "LINK_DEFENDANT",
+      "updatedTime": "2025-06-26T10:13:30.928Z"
+    },
+    {
+      "transactionId": "6f0cb959-efb0-425f-8ed9-d65692331a5e",
+      "transactionStatus": "SUCCESS",
+      "transactionType": "LINK_DEFENDANT",
+      "updatedTime": "2025-06-26T10:13:30.928Z"
+    },
+    {
+      "transactionId": "2eb95b81-e38e-48b1-ba6d-71a8e1797bb9",
+      "transactionStatus": "SUCCESS",
+      "transactionType": "LINK_DEFENDANT",
+      "updatedTime": "2025-06-26T10:13:30.928Z"
+    },
+    {
+      "transactionId": "6e29621e-1eb9-4cda-a78e-1e95624c8eb5",
+      "transactionStatus": "SUCCESS",
+      "transactionType": "LINK_DEFENDANT",
+      "updatedTime": "2025-06-26T10:13:30.928Z"
+    },
+    {
+      "transactionId": "0e0ec5ae-ba14-419f-a011-85241514b844",
+      "transactionStatus": "SUCCESS",
+      "transactionType": "LINK_DEFENDANT",
+      "updatedTime": "2025-06-26T10:13:30.928Z"
+    }
+  ]
+}

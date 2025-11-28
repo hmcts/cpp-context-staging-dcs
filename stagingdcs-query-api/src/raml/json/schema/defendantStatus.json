@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/defendantStatus.json",
+  "type": "object",
+  "properties": {
+    "defendantId": {
+      "type": "string"
+    },
+    "defendantStatus": {
+      "description": "Defendant status",
+      "type": "string"
+    },
+    "latestDefendantOperations": {
+      "description": "List of latest defendant operations",
+      "type": "array",
+      "items": {
+        "$ref": "http://moj.gov.uk/cpp/stagingdcs/defendantOperation.json"
+      }
+    }
+  },
+  "required": [
+    "defendantId",
+    "defendantStatus",
+    "latestDefendantOperations"
+  ],
+  "additionalProperties": false
+}

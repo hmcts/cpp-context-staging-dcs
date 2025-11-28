@@ -1,0 +1,25 @@
+---
+resource_descriptor:
+  spec_version: '1.0.0'
+  version: '${project.version}'
+
+  resources:
+    - name: java:/DS.stagingdcs
+      type: xa-datasource
+      setup:
+        - type: liquibase
+          maven:
+            groupId: uk.gov.moj.cpp.staging.dcs
+            artifactId: stagingdcs-viewstore-liquibase
+            type: jar
+            version: '${project.version}'
+
+    # Artefact provides these services
+    - name:   'stagingdcs-service'
+      id:     'stagingdcs_service'
+      target: '/stagingdcs-service'
+      map:
+        - '/stagingdcs-command-api'
+        - '/stagingdcs-query-api'
+      matcher: '/stagingdcs-[^/]+'
+

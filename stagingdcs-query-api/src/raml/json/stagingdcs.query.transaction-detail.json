@@ -1,0 +1,16 @@
+{
+  "transactionsDetails": [
+    {
+      "transactionId": "a23131b6-3f26-4608-a653-3964d66aa604",
+      "transactionStatus": "SUCCESS",
+      "transactionType": "LINK_DEFENDANT",
+      "updatedTime": "2025-06-26T10:13:30.927Z",
+      "createdTime": "2025-06-26T10:13:30.927Z",
+      "payload": {
+        "anyKey1": "anyValue1",
+        "anyKey2": "anyValue2"
+      },
+      "error": "error"
+    }
+  ]
+}

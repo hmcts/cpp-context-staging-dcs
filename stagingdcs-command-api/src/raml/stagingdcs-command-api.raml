@@ -1,0 +1,46 @@
+#%RAML 0.8
+title: Staging - DCS - Command API
+version: v1
+protocols: [ HTTP ]
+
+baseUri: http://localhost:8080/stagingdcs-command-api/command/api/rest/stagingdcs
+
+/create-case:
+  post:
+      description: |
+        Create Case
+        ...
+        (mapping):
+            requestType: application/vnd.stagingdcs.submit-dcs-case-record+json
+            name: stagingdcs.submit-dcs-case-record
+        ...
+      body:
+        application/vnd.stagingdcs.submit-dcs-case-record+json:
+            example: !include json/stagingdcs.submit-dcs-case-record.json
+            schema: !include json/schema/stagingdcs.submit-dcs-case-record.json
+
+      responses:
+            202:
+                description: Request Accepted
+
+/transaction/{transactionRef}:
+    post:
+      description: |
+         ...
+         (mapping):
+             requestType: application/vnd.stagingdcs.process-dcs-transaction-status+json
+             name: stagingdcs.process-dcs-transaction-status
+         ...
+      body:
+         application/vnd.stagingdcs.process-dcs-transaction-status+json:
+             schema: !include json/schema/stagingdcs.process-dcs-transaction-status.json
+             example: !include json/stagingdcs.process-dcs-transaction-status.json
+      responses:
+            202:
+                description: Request Accepted
+            400:
+                description: Error in processing transaction status
+                body:
+                  application/json:
+                    example:  !include json/transaction-status-error.json
+                    schema:  !include json/schema/transaction-status-error.json

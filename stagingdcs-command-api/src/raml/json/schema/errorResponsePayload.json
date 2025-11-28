@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/errorResponsePayload.json",
+  "type": "object",
+  "description": "This is payload structure when successful transaction is part of transaction status api",
+  "properties": {
+    "errorMessage": {
+      "maxLength": 255,
+      "type": "string",
+      "description": "Additional detailed information about the error"
+    },
+    "transactionRef": {
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/courtsDefinitions.json#/definitions/uuid"
+    }
+  },
+  "required": [
+    "errorMessage",
+    "transactionRef"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,36 @@
+{
+  "caseId": "d9fe4c51-1783-4fe4-a2b4-7c0e25905484",
+  "caseUrn": "PRJTASK0016152",
+  "prosecutionAuthority": "CPS",
+  "defendants": [
+    {
+      "id": "d9fe4c51-1783-4fe4-a2b4-7c0e25905485",
+      "bailStatus": "REMAND",
+      "interpreterLanguage": "German",
+      "hearings": [
+        {
+          "courtCentre": "Southwark",
+          "hearingDate": "2025-01-21"
+        }
+      ],
+      "defendantPerson": {
+        "forename": "John",
+        "middleName": "Theodore",
+        "surname": "SMITH",
+        "dateOfBirth": "1970-02-03"
+      },
+      "offencesDetails": {
+        "addedOffences": [
+          {
+            "offenceId": "36a5a426-3d87-45a9-b079-0830ed0229db"
+          }
+        ],
+        "removedOffences": [
+          {
+            "offenceId": "36a5a426-3d87-45a9-b079-0830ed0229db"
+          }
+        ]
+      }
+    }
+  ]
+}

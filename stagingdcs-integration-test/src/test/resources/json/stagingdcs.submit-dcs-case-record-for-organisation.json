@@ -1,0 +1,27 @@
+{
+  "caseId": "CASE_ID",
+  "caseUrn": "CASE_URN",
+  "prosecutionAuthority": "CPS",
+  "defendants": [
+    {
+      "id": "DEFENDANT_ID",
+      "interpreterLanguage": "German",
+      "hearings": [
+        {
+          "courtCentre": "Southwark",
+          "hearingDate": "2025-01-21"
+        }
+      ],
+      "defendantOrganisation": {
+        "name": "test ltd"
+      },
+      "offencesDetails": {
+        "addedOffences": [
+          {
+            "offenceId": "36a5a426-3d87-45a9-b079-0830ed0229db"
+          }
+        ]
+      }
+    }
+  ]
+}

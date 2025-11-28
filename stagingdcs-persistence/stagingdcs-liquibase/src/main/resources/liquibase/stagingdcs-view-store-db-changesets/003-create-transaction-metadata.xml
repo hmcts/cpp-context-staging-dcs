@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+    <changeSet id="create-transaction-metadata" author="cpp-context-staging-dcs">
+        <createTable tableName="transaction_metadata">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="transaction_ref_id" type="UUID"/>
+            <column name="case_id" type="UUID"/>
+            <column name="defendant_id" type="UUID" />
+            <column name="material_id" type="UUID" />
+            <column name="transaction_status" type="VARCHAR(50)"/>
+            <column name="transaction_type" type="VARCHAR(50)"/>
+            <column name="created_at" type="DATETIME TZ"/>
+            <column name="updated_at" type="DATETIME TZ"/>
+        </createTable>
+        <createIndex tableName="transaction_metadata" indexName="transaction_metadata_case_id_idx">
+            <column name="case_id"/>
+        </createIndex>
+        <createIndex tableName="transaction_metadata" indexName="transaction_metadata_defendant_id_idx">
+            <column name="defendant_id"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

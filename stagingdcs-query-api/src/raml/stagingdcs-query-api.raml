@@ -1,0 +1,131 @@
+#%RAML 0.8
+title: Staging Dcs Query API
+version: v0.1
+protocols: [ HTTP, HTTPS ]
+
+baseUri: http://localhost:8080/stagingdcs-query-api/query/api/rest/stagingdcs
+
+/dcscase/cases/{caseId}:
+  uriParameters:
+        caseId:
+          description: Case Id
+          type: string
+  get:
+      description: |
+        Return the status for the case Id.
+        ...
+        (mapping):
+            responseType: application/vnd.stagingdcs.query.dcscase-status-by-case-id+json
+            name: stagingdcs.query.dcscase-status-by-case-id
+        ...
+      responses:
+            200:
+                description: OK
+                body:
+                  application/vnd.stagingdcs.query.dcscase-status-by-case-id+json:
+                    example:  !include json/stagingdcs.query.dcscase-status-by-case-id.json
+                    schema:  !include json/schema/stagingdcs.query.dcscase-status-by-case-id.json
+
+/dcscase/cases/{caseId}/defendants/{defendantId}:
+  uriParameters:
+    caseId:
+      description: Case Id
+      type: string
+    defendantId:
+      description: Defendant Id
+      type: string
+  get:
+    description: |
+      Return the case detail.
+      ...
+      (mapping):
+         responseType: application/vnd.stagingdcs.query.dcscase-status-by-case-id+json
+          name: stagingdcs.query.dcscase-status-by-case-id-defendant-id
+      ...
+    responses:
+      200:
+        description: OK
+        body:
+          application/vnd.stagingdcs.query.dcscase-status-by-case-id+json:
+            example:  !include json/stagingdcs.query.dcscase-status-by-case-id.json
+            schema:  !include json/schema/stagingdcs.query.dcscase-status-by-case-id.json
+
+
+/transaction-metadata/case/{caseId}:
+  uriParameters:
+        caseId:
+          description: caseId to Retrieve all dcs transaction metadata
+          type: string
+  get:
+    description: |
+      Gets all dcs transaction metadata by caseId
+      ...
+      (mapping):
+        responseType: application/vnd.stagingdcs.query.transaction-metadata-for-case+json
+        name: stagingdcs.query.transaction-metadata-for-case
+      ...
+    queryParameters:
+      defendantId:
+        description: defendantId in transaction
+        type: string
+        required: false
+      materialId:
+        description: materialId in transaction
+        type: string
+        required: false
+      transactionType:
+        description: Type of the transaction
+        type: string
+        required: false
+        enum: [LINK_DEFENDANT, DEFENDANT_UPDATE, DEFENCE_REPRESENTATION, MATERIAL_UPDATE]
+      transactionStatus:
+        description: status of transaction
+        type: string
+        required: false
+        enum: [SENT, SUCCESS, FAILED]
+      limit:
+        description: limit of response
+        type: integer
+        required: false
+      pageCount:
+        description: page count
+        type: integer
+        required: false
+      fromDate:
+        description: starting data of transaction
+        type: date
+        required: false
+      toDate:
+        description: Type of the form
+        type: string
+        required: false
+    responses:
+      200:
+        description: OK
+        body:
+          application/vnd.stagingdcs.query.transaction-metadata-for-case+json:
+            example:  !include json/stagingdcs.query.transaction-metadata-for-case.json
+            schema:  !include json/schema/stagingdcs.query.transaction-metadata-for-case.json
+
+/transaction-detail:
+  get:
+    description: |
+      Gets all dcs transaction details by transactionId
+      ...
+      (mapping):
+        responseType: application/vnd.stagingdcs.query.transaction-detail+json
+        name: stagingdcs.query.transaction-detail
+      ...
+    queryParameters:
+      transactionIds:
+        description: comma seperated transaction uuids, maximum allowed is 25.
+        type: string
+        maxLength: 1000
+        required: true
+    responses:
+      200:
+        description: OK
+        body:
+          application/vnd.stagingdcs.query.transaction-detail+json:
+            example:  !include json/stagingdcs.query.transaction-detail.json
+            schema:  !include json/schema/stagingdcs.query.transaction-detail.json
