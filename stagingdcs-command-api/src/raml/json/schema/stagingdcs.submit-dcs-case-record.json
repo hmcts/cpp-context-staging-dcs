@@ -1,0 +1,6 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/command/submit-dcs-case-record.json",
+  "$ref": "http://moj.gov.uk/cpp/stagingdcs/submit-dcs-case-record-request.json",
+  "description": "The details required to create a case in DCS"
+}

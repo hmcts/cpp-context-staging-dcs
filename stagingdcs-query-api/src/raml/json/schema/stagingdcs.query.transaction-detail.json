@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://justice.gov.uk/courts/stagingdcs/query/stagingdcs.query.transaction-detail.json",
+  "description": "List of transaction details",
+  "type": "object",
+  "properties": {
+    "transactionsDetails": {
+      "description": "List of transaction details",
+      "type": "array",
+      "items": {
+        "$ref": "http://moj.gov.uk/cpp/stagingdcs/transactionDetail.json"
+      }
+    }
+  },
+  "required": [
+    "transactionsDetails"
+  ]
+}

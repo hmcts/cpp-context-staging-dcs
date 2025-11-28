@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+    <changeSet id="create-dcs-case-detail" author="cpp-context-staging-dcs">
+        <createTable tableName="dcs_case_detail">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="case_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="case_urn" type="VARCHAR(36)"/>
+            <column name="case_referral_id" type="UUID"/>
+            <column name="defendant_id" type="UUID" />
+            <column name="defendant_referral_id" type="UUID"/>
+            <column name="dcs_defendant_status" type="VARCHAR(50)"/>
+            <column name="created_at" type="DATETIME TZ"/>
+            <column name="updated_at" type="DATETIME TZ"/>
+        </createTable>
+        <createIndex tableName="dcs_case_detail" indexName="dcs_case_detail_case_id_idx">
+            <column name="case_id"/>
+        </createIndex>
+        <createIndex tableName="dcs_case_detail" indexName="dcs_case_detail_defendant_id_idx">
+            <column name="defendant_id"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

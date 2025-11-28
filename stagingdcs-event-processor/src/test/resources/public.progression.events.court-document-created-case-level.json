@@ -1,0 +1,108 @@
+{
+  "courtDocument": {
+    "containsFinancialMeans": false,
+    "courtDocumentId": "83b9956e-fa1e-4fc1-a043-eceabb4fe8fb",
+    "documentCategory": {
+      "caseDocument": {
+        "prosecutionCaseId": "CASE_ID"
+      }
+    },
+    "documentTypeDescription": "Key witness Statements",
+    "documentTypeId": "DOCUMENT_TYPE_ID",
+    "documentTypeRBAC": {
+      "deleteUserGroups": [
+        "Second Line Support"
+      ],
+      "downloadUserGroups": [
+        "District Judge",
+        "DJMC",
+        "Deputies",
+        "Defence Users",
+        "Advocates",
+        "Defence Lawyers",
+        "Probation Admin",
+        "Youth Offending Service Admin",
+        "CPS",
+        "Court Administrators",
+        "Crown Court Admin",
+        "Legal Advisers",
+        "Listing Officers",
+        "Court Clerks",
+        "Court Associate",
+        "Second Line Support",
+        "Recorders",
+        "Judge",
+        "Non CPS Prosecutors"
+      ],
+      "readUserGroups": [
+        "District Judge",
+        "DJMC",
+        "Deputies",
+        "Magistrates",
+        "Defence Users",
+        "Advocates",
+        "Defence Lawyers",
+        "Probation Admin",
+        "Youth Offending Service Admin",
+        "CPS",
+        "Court Administrators",
+        "Crown Court Admin",
+        "Legal Advisers",
+        "Listing Officers",
+        "Court Clerks",
+        "Court Associate",
+        "Second Line Support",
+        "Judge",
+        "Recorders",
+        "Non CPS Prosecutors"
+      ],
+      "uploadUserGroups": [
+        "Defence Users",
+        "Advocates",
+        "Defence Lawyers",
+        "CPS",
+        "Court Administrators",
+        "Crown Court Admin",
+        "Legal Advisers",
+        "Listing Officers",
+        "Court Clerks",
+        "Court Associate",
+        "Second Line Support",
+        "System Users",
+        "Non CPS Prosecutors"
+      ]
+    },
+    "materials": [
+      {
+        "id": "MATERIAL_ID",
+        "receivedDateTime": "2025-07-02T00:00:00.000Z",
+        "uploadDateTime": "2025-07-02T09:50:07.547Z",
+        "userGroups": [
+          "District Judge",
+          "DJMC",
+          "Deputies",
+          "Magistrates",
+          "Defence Users",
+          "Advocates",
+          "Defence Lawyers",
+          "Probation Admin",
+          "Youth Offending Service Admin",
+          "CPS",
+          "Court Administrators",
+          "Crown Court Admin",
+          "Legal Advisers",
+          "Listing Officers",
+          "Court Clerks",
+          "Court Associate",
+          "Second Line Support",
+          "Judge",
+          "Recorders",
+          "Non CPS Prosecutors"
+        ]
+      }
+    ],
+    "mimeType": "application/pdf",
+    "name": "Key-witness.pdf",
+    "seqNum": 50
+  }
+}

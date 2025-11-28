@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://justice.gov.uk/courts/stagingdcs/query/status-by-case-id",
+  "type": "object",
+  "properties": {
+    "caseId": {
+      "type": "string"
+    },
+    "caseStatus": {
+      "type": "string"
+    },
+    "defendants": {
+      "description": "List of defendant status",
+      "type": "array",
+      "items": {
+        "$ref": "http://moj.gov.uk/cpp/stagingdcs/defendantStatus.json"
+      }
+    }
+  },
+  "required": [
+    "caseId",
+    "caseStatus",
+    "defendants"
+  ]
+}

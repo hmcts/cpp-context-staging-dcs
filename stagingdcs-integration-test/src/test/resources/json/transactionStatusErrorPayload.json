@@ -1,0 +1,6 @@
+{
+  "errorPayload": {
+    "errorCode": "CASE_NOT_FOUND",
+    "errorMessage": "Case not found for the material"
+  }
+}

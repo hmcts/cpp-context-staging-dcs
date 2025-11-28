@@ -1,0 +1,15 @@
+{
+  "transactionRef": "d9fe4c51-1783-4fe4-a2b4-7c0e25905483",
+  "caseId": "CASE_ID",
+  "caseReferral": "CASE_REFERRAL",
+  "defendants": [
+    {
+      "defendantId": "DEFENDANT_ID1",
+      "defendantReferral": "d9fe4c51-1783-4fe4-a2b4-7c0e25905484"
+    },
+    {
+      "defendantId": "DEFENDANT_ID2",
+      "defendantReferral": "DEFENDANT_REFERRAL"
+    }
+  ]
+}

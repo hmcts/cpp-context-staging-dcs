@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/dcsDefendant.json",
+  "type": "object",
+  "description": "The defendant for an individual prosecution case.  Defendant details are NOT associated to multiple prosecution cases.  HMCTS business does not have authority to merge defendant details or recognise a single view of defendant",
+  "properties": {
+    "defendantId": {
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/courtsDefinitions.json#/definitions/uuid"
+    },
+    "defendantReferral": {
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/courtsDefinitions.json#/definitions/uuid"
+    }
+  },
+  "required": [
+    "defendantId",
+    "defendantReferral"
+  ],
+  "additionalProperties": false
+}

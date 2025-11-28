@@ -1,0 +1,26 @@
+package uk.gov.moj.cpp.staging.dcs.command.api.accesscontrol;
+
+import uk.gov.moj.cpp.accesscontrol.drools.Outcome;
+import uk.gov.moj.cpp.accesscontrol.drools.Action;
+import uk.gov.moj.cpp.staging.dcs.command.api.accesscontrol.RuleConstants;
+
+global uk.gov.moj.cpp.accesscontrol.common.providers.UserAndGroupProvider userAndGroupProvider;
+
+
+rule "Query - Submit DCS Case Record"
+  when
+    $outcome: Outcome();
+    $action: Action(name == "stagingdcs.submit-dcs-case-record");
+    eval(userAndGroupProvider.isMemberOfAnyOfTheSuppliedGroups($action, "System Users"))
+  then
+    $outcome.setSuccess(true);
+end
+
+rule "Command - Process dcs transaction status"
+  when
+    $outcome: Outcome();
+    $action: Action(name == "stagingdcs.process-dcs-transaction-status");
+    eval(userAndGroupProvider.isMemberOfAnyOfTheSuppliedGroups($action, "System Users"))
+  then
+    $outcome.setSuccess(true);
+end

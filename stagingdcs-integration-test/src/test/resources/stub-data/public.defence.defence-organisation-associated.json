@@ -1,0 +1,36 @@
+{
+  "caseId": "CASE_ID",
+  "defendantId": "DEFENDANT_ID",
+  "laaContractNumber": "1234567",
+  "organisationId": "ORGANISATION_ID",
+  "organisationName": "William & Co LLP",
+  "permissions": [
+    {
+      "action": "View",
+      "id": "a5ddf5f7-a370-425a-ab1c-59df5eda7002",
+      "object": "DefendantDocuments",
+      "source": "1135f11c-78d6-43bf-aae3-6f64f451cb24",
+      "status": "Added",
+      "target": "1a03a9f7-61ab-4752-9770-9b42a2820805"
+    },
+    {
+      "action": "Upload",
+      "id": "fa1c64f0-5607-4fe9-ac38-9dbf64feb47a",
+      "object": "DefendantDocuments",
+      "source": "1135f11c-78d6-43bf-aae3-6f64f451cb24",
+      "status": "Added",
+      "target": "1a03a9f7-61ab-4752-9770-9b42a2820805"
+    },
+    {
+      "action": "View",
+      "id": "5a44c7f5-c0e9-4459-bc89-5d3a9e13c745",
+      "object": "DefenceClient",
+      "source": "1135f11c-78d6-43bf-aae3-6f64f451cb24",
+      "status": "Added",
+      "target": "1a03a9f7-61ab-4752-9770-9b42a2820805"
+    }
+  ],
+  "representationType": "REPRESENTATION_ORDER",
+  "startDate": "2025-06-25T12:49:35.458Z",
+  "userId": "4c44f4a7-5a87-4008-a2da-bb87335c796b"
+}

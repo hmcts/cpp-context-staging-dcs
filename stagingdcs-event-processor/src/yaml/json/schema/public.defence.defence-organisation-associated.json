@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/defence/event/processor/public.defence.defence-organisation-associated.json",
+  "type": "object",
+  "properties": {
+    "userId": {
+      "$ref": "http://justice.gov.uk/domain/core/common/definitions.json#/definitions/uuid"
+    },
+    "defendantId": {
+      "$ref": "http://justice.gov.uk/domain/core/common/definitions.json#/definitions/uuid"
+    },
+    "organisationId": {
+      "$ref": "http://justice.gov.uk/domain/core/common/definitions.json#/definitions/uuid"
+    },
+    "organisationName": {
+      "type": "string"
+    },
+    "representationType": {
+      "type": "string",
+      "enum": [
+        "REPRESENTATION_ORDER",
+        "REPRESENTATION_ORDER_APPLIED_FOR",
+        "COURT_APPOINTED",
+        "PRO_BONO",
+        "PRIVATE"
+      ]
+    },
+    "laaContractNumber": {
+      "type": "string"
+    },
+    "startDate": {
+      "$ref": "http://justice.gov.uk/domain/core/common/definitions.json#/definitions/date-time"
+    },
+    "caseId": {
+      "$ref": "http://justice.gov.uk/domain/core/common/definitions.json#/definitions/uuid"
+    },
+    "isLAA" : {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "defendantId",
+    "organisationId",
+    "organisationName",
+    "representationType",
+    "startDate",
+    "caseId"
+  ]
+}

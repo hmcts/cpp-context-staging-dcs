@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/successPayload.json",
+  "type": "object",
+  "description": "This is payload structure when successful transaction is part of transaction status api",
+  "properties": {
+    "caseId": {
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/courtsDefinitions.json#/definitions/uuid"
+    },
+    "caseReferral": {
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/courtsDefinitions.json#/definitions/uuid"
+    },
+    "defendants": {
+      "type": "array",
+      "items": {
+        "$ref": "http://moj.gov.uk/cpp/stagingdcs/dcsDefendant.json"
+      }
+    }
+  },
+  "required": [
+    "caseId",
+    "caseReferral"
+  ],
+  "additionalProperties": false
+}

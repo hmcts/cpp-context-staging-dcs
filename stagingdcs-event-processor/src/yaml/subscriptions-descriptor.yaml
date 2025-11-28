@@ -1,0 +1,19 @@
+subscriptions_descriptor:
+  spec_version: 1.0.0
+  service: stagingdcs
+  service_component: EVENT_PROCESSOR
+  subscriptions:
+    - name: public event subscription
+      events:
+        - name: public.progression.case-defendant-changed
+          schema_uri: http://justice.gov.uk/progression/courts/defendant-updated.json
+        - name: public.defence.defence-organisation-associated
+          schema_uri: http://moj.gov.uk/cpp/defence/event/processor/public.defence.defence-organisation-associated.json
+        - name: public.defence.defence-organisation-disassociated
+          schema_uri: http://moj.gov.uk/cpp/defence/event/processor/public.defence.defence-organisation-disassociated.json
+        - name: public.progression.events.case-or-application-ejected
+          schema_uri: http://justice.gov.uk/progression/courts/case-or-application-ejected
+        - name: public.progression.events.court-document-created
+          schema_uri: http://cpp.moj.gov.uk/progression/json/schemas/event/public-court-document-created.json
+
+      event_source_name: public.event.source

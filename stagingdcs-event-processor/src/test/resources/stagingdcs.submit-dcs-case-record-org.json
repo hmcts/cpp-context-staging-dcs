@@ -1,0 +1,42 @@
+{
+  "caseId": "d9fe4c51-1783-4fe4-a2b4-7c0e25905484",
+  "caseUrn": "PRJTASK0016152",
+  "caseReferral": "a9fe4c51-1783-4fe4-a2b4-7c0e25905484",
+  "prosecutionAuthority": "CPS",
+  "defendants": [
+    {
+      "id": "d9fe4c51-1783-4fe4-a2b4-7c0e25905485",
+      "bailStatus": "REMAND",
+      "interpreterInformation": "Interpreter required",
+      "hearings": [
+        {
+          "courtCentre": "Southwark",
+          "hearingDate": "2025-01-21"
+        },
+        {
+          "courtCentre": "Southwark",
+          "hearingDate": "2025-01-21"
+        },
+        {
+          "courtCentre": "Southwark",
+          "hearingDate": "2025-01-22"
+        }
+      ],
+      "defendantOrganisation": {
+        "name": "HMCTS"
+      },
+      "offencesDetails": {
+        "addedOffences": [
+          {
+            "offenceId": "36a5a426-3d87-45a9-b079-0830ed0229db"
+          }
+        ],
+        "removedOffences": [
+          {
+            "offenceId": "36a5a426-3d87-45a9-b079-0830ed0229db"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "courtDocument": {
+    "containsFinancialMeans": false,
+    "courtDocumentId": "48a57f99-9a13-4f93-a26a-dd8c410f9776",
+    "documentCategory": {
+      "defendantDocument": {
+        "prosecutionCaseId": "CASE_ID",
+        "defendants": [
+          "DEFENDANT_ID1","DEFENDANT_ID2"
+        ]
+      }
+    },
+    "documentTypeDescription": "Electronic Notifications",
+    "documentTypeId": "DOCUMENT_ACCESS_TYPE_ID",
+    "documentTypeRBAC": {
+      "deleteUserGroups": [
+        "Second Line Support"
+      ],
+      "downloadUserGroups": [
+        "District Judge",
+        "DJMC",
+        "Deputies",
+        "Judge",
+        "Recorders",
+        "Defence Users",
+        "Advocates",
+        "Defence Lawyers",
+        "Probation Admin",
+        "Youth Offending Service Admin",
+        "Court Administrators",
+        "Crown Court Admin",
+        "Legal Advisers",
+        "Listing Officers",
+        "Court Clerks",
+        "Court Associate",
+        "CPS",
+        "Police Admin",
+        "Second Line Support"
+      ],
+      "readUserGroups": [
+        "Magistrates",
+        "District Judge",
+        "DJMC",
+        "Deputies",
+        "Judge",
+        "Recorders",
+        "Defence Users",
+        "Defence Lawyers",
+        "Advocates",
+        "CPS",
+        "Court Administrators",
+        "Crown Court Admin",
+        "Legal Advisers",
+        "Listing Officers",
+        "Court Clerks",
+        "Court Associate",
+        "Youth Offending Service Admin",
+        "Probation Admin",
+        "Police Admin",
+        "Second Line Support"
+      ],
+      "uploadUserGroups": [
+        "CPS",
+        "Court Administrators",
+        "Crown Court Admin",
+        "Legal Advisers",
+        "Listing Officers",
+        "Court Clerks",
+        "Court Associate",
+        "Second Line Support",
+        "System Users"
+      ]
+    },
+    "materials": [
+      {
+        "id": "MATERIAL_ID",
+        "receivedDateTime": "2025-07-01T17:57:08.452Z",
+        "uploadDateTime": "2025-07-01T17:57:08.565Z",
+        "userGroups": [
+          "Magistrates",
+          "District Judge",
+          "DJMC",
+          "Deputies",
+          "Judge",
+          "Recorders",
+          "Defence Users",
+          "Defence Lawyers",
+          "Advocates",
+          "CPS",
+          "Court Administrators",
+          "Crown Court Admin",
+          "Legal Advisers",
+          "Listing Officers",
+          "Court Clerks",
+          "Court Associate",
+          "Youth Offending Service Admin",
+          "Probation Admin",
+          "Police Admin",
+          "Second Line Support"
+        ]
+      }
+    ],
+    "mimeType": "application/pdf",
+    "name": "IntegrationTestDocument4_01072025.pdf",
+    "sendToCps": false,
+    "seqNum": 999
+  }
+}

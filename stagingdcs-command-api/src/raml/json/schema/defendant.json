@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://moj.gov.uk/cpp/stagingdcs/defendant.json",
+  "type": "object",
+  "description": "The defendant for an individual prosecution case.  Defendant details are NOT associated to multiple prosecution cases.  HMCTS business does not have authority to merge defendant details or recognise a single view of defendant",
+  "properties": {
+    "id": {
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/courtsDefinitions.json#/definitions/uuid"
+    },
+    "hearings": {
+      "type": "array",
+      "items": {
+        "$ref": "http://moj.gov.uk/cpp/stagingdcs/hearing.json"
+      }
+    },
+    "bailStatus": {
+      "description": "Defendant bail status",
+      "type": "string"
+    },
+    "interpreterLanguage": {
+      "type": "string",
+      "description": "Language required for interpreter"
+    },
+    "interpreterInformation": {
+      "type": "string",
+      "description": "Interpreter Information"
+    },
+    "offencesDetails": {
+      "description": "offence details",
+       "$ref": "http://moj.gov.uk/cpp/stagingdcs/offenceDetails.json"
+    },
+    "defendantPerson": {
+      "description": "When the defendant is a person the additional person specific details for the defendant",
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/defendantPerson.json"
+    },
+    "defendantOrganisation": {
+      "description": "When the defendant is an organisation, the additional organisation specific details for the defendant",
+      "$ref": "http://moj.gov.uk/cpp/stagingdcs/defendantOrganisation.json"
+    }
+  },
+  "oneOf": [
+    {
+      "required": [
+        "id",
+        "defendantPerson"
+      ]
+    },
+    {
+      "required": [
+        "id",
+        "defendantOrganisation"
+      ]
+    }
+  ],
+  "additionalProperties": false
+}

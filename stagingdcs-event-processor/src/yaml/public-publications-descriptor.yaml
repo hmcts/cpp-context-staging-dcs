@@ -1,0 +1,13 @@
+subscriptions_descriptor:
+  spec_version: 1.0.0
+  service: stagingdcs
+  service_component: EVENT_PROCESSOR
+  subscriptions:
+    - name: public event processor subscription
+      events:
+        - name: public.stagingdcs.test
+          schema_uri: http://moj.gov.uk/cpp/staging/dcs/events/public.stagingdcs.test.json
+
+
+
+      event_source_name: public.event.source
