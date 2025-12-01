@@ -4,7 +4,7 @@
     <parent>
         <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
         <artifactId>stagingdcs-parent</artifactId>
-        <version>17.101.6-SNAPSHOT</version>
+        <version>17.101.5</version>
     </parent>
 
     <artifactId>stagingdcs-domain-common</artifactId>
