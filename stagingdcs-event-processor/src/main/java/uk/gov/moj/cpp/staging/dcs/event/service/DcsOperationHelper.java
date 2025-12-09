@@ -257,7 +257,7 @@ public class DcsOperationHelper {
 
     public static String getDocumentName(final Material material, final CourtDocument courtDocument) {
         String fileName = isNotEmpty(material.getName()) ? material.getName() : courtDocument.getName();
-        if (getAllowedFileExtensionList().stream().anyMatch(extension -> fileName.toLowerCase().contains(extension))) {
+        if (getAllowedFileExtensionList().stream().anyMatch(extension -> fileName.toLowerCase().endsWith(extension))) {
             return fileName;
         } else {
             final String mimeType = courtDocument.getMimeType();
