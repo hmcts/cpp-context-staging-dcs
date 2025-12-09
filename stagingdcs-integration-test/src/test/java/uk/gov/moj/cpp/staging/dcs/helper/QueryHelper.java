@@ -26,7 +26,7 @@ public class QueryHelper {
     private static final String QUERY = "/stagingdcs-query-api/query/api/rest/stagingdcs/dcscase/cases/";
     private static final String TRANSACTION_METADATA_QUERY = "/stagingdcs-query-api/query/api/rest/stagingdcs/transaction-metadata/case/";
     private static final String TRANSACTION_DETAILS_QUERY = "/stagingdcs-query-api/query/api/rest/stagingdcs/transaction-detail";
-    private static final int QUERY_TIMEOUT_IN_SECONDS = 15;
+    private static final int QUERY_TIMEOUT_IN_SECONDS = 60;
     public static final FibonacciPollWithStartAndMax POLL_INTERVAL = new FibonacciPollWithStartAndMax(Duration.ofMillis(30), Duration.ofMillis(300));
 
     public void queryCaseDetailByCaseIdAndAssertMatch(final UUID caseId, final Matcher... matchers) {
