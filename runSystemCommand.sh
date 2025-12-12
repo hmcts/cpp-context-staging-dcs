@@ -17,7 +17,7 @@
 #
 ##################################################################################################
 
-FRAMEWORK_VERSION=17.100.4
+FRAMEWORK_VERSION=$(mvn help:evaluate -Dexpression=framework.version -q -DforceStdout)
 CONTEXT_NAME="stagingdcs"
 USER_NAME="admin"
 PASSWORD="admin"

@@ -16,8 +16,8 @@ ARG wildfly_home=/opt/jboss/wildfly
 ARG wildfly_user=jboss
 ARG context_group_name=staging/dcs
 ARG context_name=stagingdcs
-ARG framework_version=17.100.4
-ARG framework_libraries_version=17.100.1
+ARG framework_version
+ARG framework_libraries_version
 
 # service war file
 ADD ${mavenArtifactBaseUrl}/uk/gov/moj/cpp/${context_group_name}/${context_name}-service/${version}/${context_name}-service-${version}.war ${wildfly_home}/standalone/deployments/
