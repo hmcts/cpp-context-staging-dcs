@@ -4,7 +4,7 @@
     <parent>
         <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
         <artifactId>stagingdcs-parent</artifactId>
-        <version>17.101.6-SNAPSHOT</version>
+        <version>17.101.6-CCT-2357-SNAPSHOT</version>
     </parent>
 
     <artifactId>stagingdcs-query-api</artifactId>
