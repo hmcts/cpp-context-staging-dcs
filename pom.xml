@@ -17,7 +17,7 @@
         <jgitflow.maven.developBranchName>main</jgitflow.maven.developBranchName>
         <coredomain.version>17.102.14-CCT-2357-SNAPSHOT</coredomain.version>
         <progression.version>17.0.214</progression.version>
-        <referencedata.version>17.0.113</referencedata.version>
+        <referencedata.version>17.0.120</referencedata.version>
         <defence.version>17.0.86</defence.version>
         <usersgroups.version>17.0.39</usersgroups.version>
         <material.version>17.0.70</material.version>
