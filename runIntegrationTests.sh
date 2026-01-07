@@ -4,9 +4,9 @@
 
 CONTEXT_NAME=stagingdcs
 
-FRAMEWORK_LIBRARIES_VERSION=17.100.1
-FRAMEWORK_VERSION=17.100.4
-EVENT_STORE_VERSION=17.100.8
+FRAMEWORK_LIBRARIES_VERSION=$(mvn help:evaluate -Dexpression=framework-libraries.version -q -DforceStdout)
+FRAMEWORK_VERSION=$(mvn help:evaluate -Dexpression=framework.version -q -DforceStdout)
+EVENT_STORE_VERSION=$(mvn help:evaluate -Dexpression=event-store.version -q -DforceStdout)
 
 DOCKER_CONTAINER_REGISTRY_HOST_NAME=crmdvrepo01
 
