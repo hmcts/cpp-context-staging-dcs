@@ -15,7 +15,7 @@
         <mvn.site.url>file://${project.build.directory}/site</mvn.site.url>
         <commons-dbutils.version>1.6</commons-dbutils.version>
         <jgitflow.maven.developBranchName>main</jgitflow.maven.developBranchName>
-        <coredomain.version>17.103.11-CCT-2357-SNAPSHOT</coredomain.version>
+        <coredomain.version>17.102.15-CCT-2357-SNAPSHOT</coredomain.version>
         <progression.version>17.0.214</progression.version>
         <referencedata.version>17.0.120</referencedata.version>
         <defence.version>17.0.86</defence.version>
