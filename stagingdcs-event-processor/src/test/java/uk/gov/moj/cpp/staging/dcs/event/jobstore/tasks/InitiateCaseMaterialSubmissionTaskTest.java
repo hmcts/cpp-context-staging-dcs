@@ -138,6 +138,91 @@ class InitiateCaseMaterialSubmissionTaskTest {
         assertThat(taskName.getValue(), is(INITIATE_MATERIAL_TASK_FOR_CASE));
 
     }
+
+    @Test
+    void executeMethodShouldProcess_WhenDefendantIdMatchesLinkedDefendantId() {
+        final String linkedDefendantId = randomUUID().toString();
+        final String caseId = randomUUID().toString();
+        final String materialId1 = randomUUID().toString();
+        final String materialId2 = randomUUID().toString();
+        final String documentTypeId1 = randomUUID().toString();
+        final String documentTypeId2 = randomUUID().toString();
+
+        DcsCaseDetailEntity dcsCaseDetailEntity = new DcsCaseDetailEntity();
+        dcsCaseDetailEntity.setId(randomUUID());
+        dcsCaseDetailEntity.setCaseId(fromString(caseId));
+        dcsCaseDetailEntity.setCaseUrn(random(9));
+        dcsCaseDetailEntity.setDefendantId(fromString(linkedDefendantId));
+        dcsCaseDetailEntity.setDcsDefendantStatus(DcsDefendantStatus.LINKED.name());
+        when(dcsCaseDetailRepository.findByCaseId(UUID.fromString(caseId))).thenReturn(List.of(dcsCaseDetailEntity));
+
+        when(progressionService.getCourtDocumentsByParams(any(), any()))
+                .thenReturn(buildCourtDocumentIndexListWithAllowedDefendantDocument(caseId, linkedDefendantId, materialId1, materialId2, documentTypeId1, documentTypeId2));
+        when(referenceDataService.createDocumentAccessTypeMap()).thenReturn(createDocumentAccessTypeMap(documentTypeId1, false, documentTypeId2, true));
+        when(dcsOperationHelper.shouldSendMaterialToDcs(any())).thenReturn(true);
+
+        DcsDefendantEntity dcsDefendantEntity = new DcsDefendantEntity();
+        dcsDefendantEntity.setDefendantId(UUID.fromString(linkedDefendantId));
+        dcsDefendantEntity.setMasterDefendantId(randomUUID());
+        when(dcsDefendantRepository.findByDefendantId(any())).thenReturn(dcsDefendantEntity);
+
+        MaterialTaskData inputData = getMaterialTaskData(caseId, List.of(linkedDefendantId), null, null, null);
+        final ExecutionInfo materialExecutionInfo = new ExecutionInfo(
+                objectToJsonObjectConverter.convert(inputData),
+                INITIATE_MATERIAL_TASK_FOR_CASE,
+                ZonedDateTime.now(),
+                STARTED,
+                Priority.MEDIUM);
+        initiateCaseMaterialSubmissionTask.execute(materialExecutionInfo);
+
+        final ArgumentCaptor<JsonObject> eligibleTask = ArgumentCaptor.forClass(JsonObject.class);
+        verify(dcsOperationHelper, times(1)).processInsertMaterialDocument(eligibleTask.capture());
+        final MaterialTaskData downloadableTaskData = jsonObjectToObjectConverter.convert(eligibleTask.getValue(), MaterialTaskData.class);
+        assertOnMaterialTaskData(downloadableTaskData, caseId, materialId2, linkedDefendantId);
+    }
+
+    @Test
+    void executeMethodShouldProcess_WhenDefendantIdMatchesMasterDefendantId() {
+        final String linkedDefendantId = randomUUID().toString();
+        final String masterDefendantId = randomUUID().toString();
+        final String caseId = randomUUID().toString();
+        final String materialId1 = randomUUID().toString();
+        final String materialId2 = randomUUID().toString();
+        final String documentTypeId1 = randomUUID().toString();
+        final String documentTypeId2 = randomUUID().toString();
+
+        DcsCaseDetailEntity dcsCaseDetailEntity = new DcsCaseDetailEntity();
+        dcsCaseDetailEntity.setId(randomUUID());
+        dcsCaseDetailEntity.setCaseId(fromString(caseId));
+        dcsCaseDetailEntity.setCaseUrn(random(9));
+        dcsCaseDetailEntity.setDefendantId(fromString(linkedDefendantId));
+        dcsCaseDetailEntity.setDcsDefendantStatus(DcsDefendantStatus.LINKED.name());
+        when(dcsCaseDetailRepository.findByCaseId(UUID.fromString(caseId))).thenReturn(List.of(dcsCaseDetailEntity));
+
+        when(progressionService.getCourtDocumentsByParams(any(), any()))
+                .thenReturn(buildCourtDocumentIndexListWithAllowedDefendantDocument(caseId, masterDefendantId, materialId1, materialId2, documentTypeId1, documentTypeId2));
+        when(referenceDataService.createDocumentAccessTypeMap()).thenReturn(createDocumentAccessTypeMap(documentTypeId1, false, documentTypeId2, true));
+        when(dcsOperationHelper.shouldSendMaterialToDcs(any())).thenReturn(true);
+
+        DcsDefendantEntity dcsDefendantEntity = new DcsDefendantEntity();
+        dcsDefendantEntity.setDefendantId(UUID.fromString(linkedDefendantId));
+        dcsDefendantEntity.setMasterDefendantId(UUID.fromString(masterDefendantId));
+        when(dcsDefendantRepository.findByDefendantId(any())).thenReturn(dcsDefendantEntity);
+
+        MaterialTaskData inputData = getMaterialTaskData(caseId, List.of(linkedDefendantId), null, null, null);
+        final ExecutionInfo materialExecutionInfo = new ExecutionInfo(
+                objectToJsonObjectConverter.convert(inputData),
+                INITIATE_MATERIAL_TASK_FOR_CASE,
+                ZonedDateTime.now(),
+                STARTED,
+                Priority.MEDIUM);
+        initiateCaseMaterialSubmissionTask.execute(materialExecutionInfo);
+
+        final ArgumentCaptor<JsonObject> eligibleTask = ArgumentCaptor.forClass(JsonObject.class);
+        verify(dcsOperationHelper, times(1)).processInsertMaterialDocument(eligibleTask.capture());
+        final MaterialTaskData downloadableTaskData = jsonObjectToObjectConverter.convert(eligibleTask.getValue(), MaterialTaskData.class);
+        assertOnMaterialTaskData(downloadableTaskData, caseId, materialId2, linkedDefendantId);
+    }
     @Test
     void executeMethodShouldNotProcess_DueToDuplicateMaterial() {
         final String defendantId = randomUUID().toString();
@@ -225,7 +310,7 @@ class InitiateCaseMaterialSubmissionTaskTest {
         final String defendantId = randomUUID().toString();
         final String caseId = randomUUID().toString();
 
-        when(dcsCaseDetailRepository.findByCaseId(UUID.fromString(caseId))).thenReturn(Collections.EMPTY_LIST);
+        when(dcsCaseDetailRepository.findByCaseId(UUID.fromString(caseId))).thenReturn(Collections.emptyList());
 
         MaterialTaskData inputData = getMaterialTaskData(caseId, List.of(defendantId), null, null, null);
         final ExecutionInfo materialExecutionInfo = new ExecutionInfo(
@@ -368,6 +453,20 @@ class InitiateCaseMaterialSubmissionTaskTest {
                 .replaceAll("MATERIAL_ID_2", materialId2)
                 .replaceAll("DOCUMENT_TYPE_ID_1", documentId1)
                 .replaceAll("DOCUMENT_TYPE_ID_2", documentId2);
+        final JsonObject payloadJsonObject = FileUtil.jsonFromString(progressionString);
+        return new JsonObjectToObjectConverter(new ObjectMapperProducer().objectMapper()).convert(payloadJsonObject, CourtdocumentsAll.class);
+    }
+
+    private CourtdocumentsAll buildCourtDocumentIndexListWithAllowedDefendantDocument(final String caseId, final String defendantId, final String materialId1,
+                                                                                      final String materialId2, final String documentId1, final String documentId2) {
+        final String progressionString = FileUtil.getPayload("all-progression-courtdocument-search.json")
+                .replaceAll("CASE_ID", caseId)
+                .replaceAll("DEFENDANT_ID", defendantId)
+                .replaceAll("MATERIAL_ID_1", materialId1)
+                .replaceAll("MATERIAL_ID_2", materialId2)
+                .replaceAll("DOCUMENT_TYPE_ID_1", documentId1)
+                .replaceAll("DOCUMENT_TYPE_ID_2", documentId2)
+                .replaceAll("application/zip", "application/pdf");
         final JsonObject payloadJsonObject = FileUtil.jsonFromString(progressionString);
         return new JsonObjectToObjectConverter(new ObjectMapperProducer().objectMapper()).convert(payloadJsonObject, CourtdocumentsAll.class);
     }
