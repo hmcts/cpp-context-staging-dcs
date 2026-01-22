@@ -685,6 +685,69 @@ class StagingDcsIT extends BaseIT {
     }
 
     @Test
+    void shouldSendMaterial_WhenCourtDocumentAdded_WithMasterDefendantId() {
+        FeatureStubber.stubFeaturesFor(CONTEXT, Map.of(FEATURE_STAGING_DCS, TRUE));
+        final UUID masterDefendantId = randomUUID();
+        stubDcsCreateCallOnSuccess(caseId, defendantId, caseUrn, defendantReferral, caseReferral);
+        stubProgressionServiceForRelatedCases(caseId, defendantId, masterDefendantId);
+        stubDcsDefendantsUpdateCal(caseUrn, defendantReferral.toString());
+
+        final JsonObject payload = dcsHelper.createCaseinDcsRequest(caseId, defendantId, caseUrn, "json/stagingdcs.submit-dcs-case-record.json");
+
+        final int responseStatusCode = sendCommandToAddRequest(payload);
+        assertThat(responseStatusCode, is(ACCEPTED.getStatusCode()));
+        verifyCaseStatusLinked(caseId, LINKED, defendantId, LINKED);
+
+        getDocumentTypeAccessByIdStub(documentTypeId1.toString());
+        Map<String, String> replacevalueMap = new HashMap<>();
+        replacevalueMap.put("CASE_ID", caseId.toString());
+        replacevalueMap.put("DEFENDANT_ID", masterDefendantId.toString());
+        replacevalueMap.put("MATERIAL_ID", materialId1.toString());
+        replacevalueMap.put("DOCUMENT_ACCESS_TYPE_ID", documentTypeId1.toString());
+        sendPublicEvent(PUBLIC_PROGRESSION_EVENTS_COURT_DOCUMENT_CREATED,
+                "stub-data/public.progression.events.court-document-created-defendant-level.json", replacevalueMap);
+        verifyPublicProgressionCourtDocumentAdded();
+
+        queryHelper.queryTransactionMetadataAndAssertMatch(caseId, Map.of("defendantId", defendantId.toString(), "materialId", materialId1.toString()),
+                withJsonPath("$.caseId", equalTo(caseId.toString())),
+                withJsonPath("$.defendants[0].defendantId", equalTo(defendantId.toString())),
+                withJsonPath("$.defendants[0].defendantOperations[0].materialId", equalTo(materialId1.toString())),
+                withJsonPath("$.defendants[0].defendantOperations[0].transactionType", equalTo(MATERIAL_UPDATE.name())),
+                withJsonPath("$.defendants[0].defendantOperations[0].transactionStatus", equalTo(SENT.name())));
+    }
+
+    @Test
+    void shouldSendMaterial_WhenCourtDocumentAdded_WithDefendantId() {
+        FeatureStubber.stubFeaturesFor(CONTEXT, Map.of(FEATURE_STAGING_DCS, TRUE));
+        stubDcsCreateCallOnSuccess(caseId, defendantId, caseUrn, defendantReferral, caseReferral);
+        stubProgressionService(caseId, defendantId);
+        stubDcsDefendantsUpdateCal(caseUrn, defendantReferral.toString());
+
+        final JsonObject payload = dcsHelper.createCaseinDcsRequest(caseId, defendantId, caseUrn, "json/stagingdcs.submit-dcs-case-record.json");
+
+        final int responseStatusCode = sendCommandToAddRequest(payload);
+        assertThat(responseStatusCode, is(ACCEPTED.getStatusCode()));
+        verifyCaseStatusLinked(caseId, LINKED, defendantId, LINKED);
+
+        getDocumentTypeAccessByIdStub(documentTypeId1.toString());
+        Map<String, String> replacevalueMap = new HashMap<>();
+        replacevalueMap.put("CASE_ID", caseId.toString());
+        replacevalueMap.put("DEFENDANT_ID", defendantId.toString());
+        replacevalueMap.put("MATERIAL_ID", materialId1.toString());
+        replacevalueMap.put("DOCUMENT_ACCESS_TYPE_ID", documentTypeId1.toString());
+        sendPublicEvent(PUBLIC_PROGRESSION_EVENTS_COURT_DOCUMENT_CREATED,
+                "stub-data/public.progression.events.court-document-created-defendant-level.json", replacevalueMap);
+        verifyPublicProgressionCourtDocumentAdded();
+
+        queryHelper.queryTransactionMetadataAndAssertMatch(caseId, Map.of("defendantId", defendantId.toString(), "materialId", materialId1.toString()),
+                withJsonPath("$.caseId", equalTo(caseId.toString())),
+                withJsonPath("$.defendants[0].defendantId", equalTo(defendantId.toString())),
+                withJsonPath("$.defendants[0].defendantOperations[0].materialId", equalTo(materialId1.toString())),
+                withJsonPath("$.defendants[0].defendantOperations[0].transactionType", equalTo(MATERIAL_UPDATE.name())),
+                withJsonPath("$.defendants[0].defendantOperations[0].transactionStatus", equalTo(SENT.name())));
+    }
+
+    @Test
     void shouldSendMaterial_WhenDuplicateCourtDocumentAdded_ForAdditionalDefendantSameMaterial() {
         final UUID defendantId2 = randomUUID();
         FeatureStubber.stubFeaturesFor(CONTEXT, Map.of(FEATURE_STAGING_DCS, TRUE));
@@ -747,6 +810,49 @@ class StagingDcsIT extends BaseIT {
         queryHelper.queryTransactionMetadataAndAssertMatch(caseId, Map.of("defendantId", defendantId2.toString(),"transactionType", "MATERIAL_UPDATE"),
                 withJsonPath("$.caseId", equalTo(caseId.toString())),
                 withJsonPath("$.defendants[0].defendantOperations", hasSize(1)));
+    }
+
+    @Test
+    void shouldSendMaterial_WhenCaseMaterialInitiated_WithMasterDefendantId() {
+        FeatureStubber.stubFeaturesFor(CONTEXT, Map.of(FEATURE_STAGING_DCS, TRUE));
+        final UUID masterDefendantId = randomUUID();
+        createSendMaterialFunctionalStubs(caseId.toString(), masterDefendantId.toString(), null, caseUrn);
+        stubDcsCreateCallOnSuccess(caseId, defendantId, caseUrn, defendantReferral, caseReferral);
+        stubProgressionServiceForRelatedCases(caseId, defendantId, masterDefendantId);
+        stubDcsDefendantsUpdateCal(caseUrn, defendantReferral.toString());
+
+        final JsonObject payload = dcsHelper.createCaseinDcsRequest(caseId, defendantId, caseUrn, "json/stagingdcs.submit-dcs-case-record.json");
+
+        final int responseStatusCode = sendCommandToAddRequest(payload);
+        assertThat(responseStatusCode, is(ACCEPTED.getStatusCode()));
+        verifyCaseStatusLinked(caseId, LINKED, defendantId, LINKED);
+
+        queryHelper.queryTransactionMetadataAndAssertMatch(caseId, Map.of("defendantId", defendantId.toString(), "materialId", materialId2.toString()),
+                withJsonPath("$.caseId", equalTo(caseId.toString())),
+                withJsonPath("$.defendants[0].defendantId", equalTo(defendantId.toString())),
+                withJsonPath("$.defendants[0].defendantOperations[0].materialId", equalTo(materialId2.toString())),
+                withJsonPath("$.defendants[0].defendantOperations[0].transactionType", equalTo(MATERIAL_UPDATE.name())));
+    }
+
+    @Test
+    void shouldSendMaterial_WhenCaseMaterialInitiated_WithDefendantId() {
+        FeatureStubber.stubFeaturesFor(CONTEXT, Map.of(FEATURE_STAGING_DCS, TRUE));
+        createSendMaterialFunctionalStubs(caseId.toString(), defendantId.toString(), null, caseUrn);
+        stubDcsCreateCallOnSuccess(caseId, defendantId, caseUrn, defendantReferral, caseReferral);
+        stubProgressionService(caseId, defendantId);
+        stubDcsDefendantsUpdateCal(caseUrn, defendantReferral.toString());
+
+        final JsonObject payload = dcsHelper.createCaseinDcsRequest(caseId, defendantId, caseUrn, "json/stagingdcs.submit-dcs-case-record.json");
+
+        final int responseStatusCode = sendCommandToAddRequest(payload);
+        assertThat(responseStatusCode, is(ACCEPTED.getStatusCode()));
+        verifyCaseStatusLinked(caseId, LINKED, defendantId, LINKED);
+
+        queryHelper.queryTransactionMetadataAndAssertMatch(caseId, Map.of("defendantId", defendantId.toString(), "materialId", materialId2.toString()),
+                withJsonPath("$.caseId", equalTo(caseId.toString())),
+                withJsonPath("$.defendants[0].defendantId", equalTo(defendantId.toString())),
+                withJsonPath("$.defendants[0].defendantOperations[0].materialId", equalTo(materialId2.toString())),
+                withJsonPath("$.defendants[0].defendantOperations[0].transactionType", equalTo(MATERIAL_UPDATE.name())));
     }
 
     @Test

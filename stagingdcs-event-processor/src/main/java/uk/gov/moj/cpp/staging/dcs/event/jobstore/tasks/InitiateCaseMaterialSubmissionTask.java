@@ -151,7 +151,7 @@ public class InitiateCaseMaterialSubmissionTask extends BaseTask implements Exec
     private boolean isDefendantLevelMaterialBelongsToLinkedDefendant(final CourtDocumentIndex index, final Map<String, String> masterDefendantIdMap) {
         if (isNotEmpty(index.getDefendantIds())) {
             return index.getDefendantIds().stream()
-                    .anyMatch(materialDefendantId -> masterDefendantIdMap.containsValue(materialDefendantId.toString()));
+                    .anyMatch(materialDefendantId -> isLinkedDefendantId(materialDefendantId, masterDefendantIdMap));
         }
         return true;
     }
@@ -177,11 +177,9 @@ public class InitiateCaseMaterialSubmissionTask extends BaseTask implements Exec
             data.setDefendantLevel(true);
             Map<String, String> defendantsForThisDocument = new HashMap<>();
             courtDocumentIndex.getDefendantIds().forEach(defId -> {
-                if(masterDefendantIdMap.containsValue(defId.toString())) {
-                    final String defendantId = getKeyByValue(masterDefendantIdMap,defId.toString());
-                    if (currentlyLinkedDefendantReferralIdMap.containsKey(defendantId)) {
-                        defendantsForThisDocument.put(defendantId, currentlyLinkedDefendantReferralIdMap.get(defendantId));
-                    }
+                final String defendantId = getLinkedDefendantId(defId, masterDefendantIdMap);
+                if (nonNull(defendantId) && currentlyLinkedDefendantReferralIdMap.containsKey(defendantId)) {
+                    defendantsForThisDocument.put(defendantId, currentlyLinkedDefendantReferralIdMap.get(defendantId));
                 }
             });
             data.setDefendantIdReferralIdMap(defendantsForThisDocument);
@@ -201,5 +199,17 @@ public class InitiateCaseMaterialSubmissionTask extends BaseTask implements Exec
         final UUID retryTranRefId = randomUUID();
         logger.info(format("retrying the INITIATE_MATERIAL_TASK_FOR_CASE with new retryID %s", retryTranRefId));
         return getRetryExecutionInfo(new DcsResponseProcessingException(responseErr), retryTranRefId.toString(), INITIATE_MATERIAL_TASK_FOR_CASE);
+    }
+
+    private boolean isLinkedDefendantId(final UUID defendantId, final Map<String, String> masterDefendantIdMap) {
+        return masterDefendantIdMap.containsKey(defendantId.toString())
+                || masterDefendantIdMap.containsValue(defendantId.toString());
+    }
+
+    private String getLinkedDefendantId(final UUID defendantId, final Map<String, String> masterDefendantIdMap) {
+        if (masterDefendantIdMap.containsKey(defendantId.toString())) {
+            return defendantId.toString();
+        }
+        return getKeyByValue(masterDefendantIdMap, defendantId.toString());
     }
 }
