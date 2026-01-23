@@ -2,8 +2,8 @@ package uk.gov.moj.cpp.staging.dcs.query.api;
 
 import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
-import static javax.json.Json.createArrayBuilder;
-import static javax.json.Json.createObjectBuilder;
+import static uk.gov.justice.services.messaging.JsonObjects.createArrayBuilder;
+import static uk.gov.justice.services.messaging.JsonObjects.createObjectBuilder;
 import static org.apache.commons.collections.CollectionUtils.isNotEmpty;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.inject.Inject;
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
@@ -238,7 +238,7 @@ public class StagingDcsTransactionQueryApi {
     }
 
     private JsonObject getTransactionJsonObject(final TransactionMetadataEntity tran) {
-        JsonObjectBuilder objectBuilder = Json.createObjectBuilder()
+        JsonObjectBuilder objectBuilder = JsonObjects.createObjectBuilder()
                 .add(TRANSACTION_ID, tran.getTransactionRefId().toString())
                 .add(TRANSACTION_TYPE, tran.getTransactionType())
                 .add(UPDATED_TIME, tran.getUpdatedAt().format(ZONE_DATETIME_FORMATTER).toString());

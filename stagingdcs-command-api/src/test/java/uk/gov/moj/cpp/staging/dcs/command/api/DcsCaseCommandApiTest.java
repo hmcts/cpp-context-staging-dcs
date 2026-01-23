@@ -1,7 +1,7 @@
 package uk.gov.moj.cpp.staging.dcs.command.api;
 
 import static java.util.UUID.randomUUID;
-import static javax.json.Json.createArrayBuilder;
+import static uk.gov.justice.services.messaging.JsonObjects.createArrayBuilder;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
