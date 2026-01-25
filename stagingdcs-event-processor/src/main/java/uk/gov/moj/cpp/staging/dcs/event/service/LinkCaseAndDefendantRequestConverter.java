@@ -33,7 +33,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObject;
@@ -148,7 +148,7 @@ public class LinkCaseAndDefendantRequestConverter {
 
     public static JsonArray removeDuplicateObjects(JsonArray jsonArray) {
         Set<String> uniqueHearingSet = new HashSet<>();
-        JsonArrayBuilder builder = Json.createArrayBuilder();
+        JsonArrayBuilder builder = JsonObjects.createArrayBuilder();
 
         for (JsonValue value : jsonArray) {
             String jsonString = value.toString();

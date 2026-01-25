@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 
@@ -81,7 +81,7 @@ class StagingDcsTransactionQueryApiTest {
         when(transactionMetadataRepository.getTransactionMetadataByCriteria(any())).thenReturn(tranList);
         when(transactionMetadataRepository.getTransactionMetadataCountByCriteria(any())).thenReturn(50L);
 
-        JsonObject jsonObject = Json.createObjectBuilder()
+        JsonObject jsonObject = JsonObjects.createObjectBuilder()
                 .add(CASE_ID_FIELD, caseId.toString())
                 .add(DEFENDANT_ID, randomUUID().toString())
                 .add(MATERIAL_ID, randomUUID().toString())
@@ -116,7 +116,7 @@ class StagingDcsTransactionQueryApiTest {
         when(transactionMetadataRepository.getTransactionMetadataByCriteria(any())).thenReturn(null);
         when(transactionMetadataRepository.getTransactionMetadataCountByCriteria(any())).thenReturn(null);
 
-        JsonObject jsonObject = Json.createObjectBuilder()
+        JsonObject jsonObject = JsonObjects.createObjectBuilder()
                 .add(CASE_ID_FIELD, caseId.toString())
                 .add(TRANSACTION_TYPE, TransactionType.LINK_DEFENDANT.name())
                 .add(TRANSACTION_STATUS, TransactionStatus.SUCCESS.name())
@@ -148,7 +148,7 @@ class StagingDcsTransactionQueryApiTest {
         when(transactionMetadataRepository.getTransactionMetadataByCriteria(any())).thenReturn(new ArrayList<>());
         when(transactionMetadataRepository.getTransactionMetadataCountByCriteria(any())).thenReturn(0L);
 
-        JsonObject jsonObject = Json.createObjectBuilder()
+        JsonObject jsonObject = JsonObjects.createObjectBuilder()
                 .add(CASE_ID_FIELD, caseId.toString())
                 .add(LIMIT, 10)
                 .add(PAGE_COUNT, 0)
@@ -175,7 +175,7 @@ class StagingDcsTransactionQueryApiTest {
     void shouldThrowBadRequestException_WhenDateFormatIsWrong() {
 
         final UUID caseId = randomUUID();
-        JsonObject jsonObject = Json.createObjectBuilder()
+        JsonObject jsonObject = JsonObjects.createObjectBuilder()
                 .add(CASE_ID_FIELD, caseId.toString())
                 .add(LIMIT, 10)
                 .add(PAGE_COUNT, 0)
@@ -195,7 +195,7 @@ class StagingDcsTransactionQueryApiTest {
     void shouldThrowBadRequestException_WhenTransactionTypeValuesAreWrong() {
 
         final UUID caseId = randomUUID();
-        JsonObject jsonObject = Json.createObjectBuilder()
+        JsonObject jsonObject = JsonObjects.createObjectBuilder()
                 .add(CASE_ID_FIELD, caseId.toString())
                 .add(TRANSACTION_TYPE, "wrongValue")
                 .add(TRANSACTION_STATUS, TransactionStatus.SUCCESS.name())
@@ -217,7 +217,7 @@ class StagingDcsTransactionQueryApiTest {
     void shouldThrowBadRequestException_WhenTransactionStatusValuesAreWrong() {
 
         final UUID caseId = randomUUID();
-        JsonObject jsonObject = Json.createObjectBuilder()
+        JsonObject jsonObject = JsonObjects.createObjectBuilder()
                 .add(CASE_ID_FIELD, caseId.toString())
                 .add(TRANSACTION_STATUS, "failed")
                 .add(LIMIT, 10)
@@ -238,7 +238,7 @@ class StagingDcsTransactionQueryApiTest {
     void shouldThrowBadRequestException_WhenTransactionIdsAreWrong() {
 
         final UUID tranId1 = randomUUID();
-        JsonObject jsonObject = Json.createObjectBuilder()
+        JsonObject jsonObject = JsonObjects.createObjectBuilder()
                 .add(TRANSACTION_IDS, tranId1.toString().concat(",").concat("nonUuidString"))
                 .build();
         JsonEnvelope jsonEnvelope = JsonEnvelope.envelopeFrom(
@@ -256,7 +256,7 @@ class StagingDcsTransactionQueryApiTest {
         final List<TransactionDetailEntity> tranList = getTransactionDetailList(5);
         when(transactionDetailRepository.findByTransactionsByIdList(any())).thenReturn(tranList);
 
-        JsonObject jsonObject = Json.createObjectBuilder()
+        JsonObject jsonObject = JsonObjects.createObjectBuilder()
                 .add(TRANSACTION_IDS, randomUUID().toString().concat(",").concat(randomUUID().toString()))
                 .build();
         JsonEnvelope jsonEnvelope = JsonEnvelope.envelopeFrom(
@@ -306,7 +306,7 @@ class StagingDcsTransactionQueryApiTest {
         List<TransactionDetailEntity> list = new ArrayList<>();
         for (int i = 0; i < numberOfEntities; i++) {
             final UUID transactionId = randomUUID();
-            final JsonObject payload = Json.createObjectBuilder().add("key".concat(String.valueOf(i)), "value".concat(String.valueOf(i))).build();
+            final JsonObject payload = JsonObjects.createObjectBuilder().add("key".concat(String.valueOf(i)), "value".concat(String.valueOf(i))).build();
             final String error = "ERROR".concat(String.valueOf(i));
             list.add(createTransactionDetailEntity(transactionId, SUCCESS, TransactionType.LINK_DEFENDANT,
                     ZonedDateTime.now().minusDays(1), ZonedDateTime.now().minusDays(2), payload.toString(), error));

@@ -1,6 +1,6 @@
 package uk.gov.moj.cpp.staging.dcs.event.jobstore.service;
 
-import static javax.json.Json.createObjectBuilder;
+import static uk.gov.justice.services.messaging.JsonObjects.createObjectBuilder;
 import static uk.gov.justice.services.messaging.Envelope.metadataFrom;
 import static uk.gov.moj.cpp.staging.dcs.domain.common.Constants.CASE_ID;
 
