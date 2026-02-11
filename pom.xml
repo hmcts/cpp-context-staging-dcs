@@ -10,7 +10,7 @@
 
     <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
     <artifactId>stagingdcs-parent</artifactId>
-    <version>17.103.10-SNAPSHOT</version>
+    <version>17.103.10</version>
     <properties>
         <mvn.site.url>file://${project.build.directory}/site</mvn.site.url>
         <commons-dbutils.version>1.6</commons-dbutils.version>
