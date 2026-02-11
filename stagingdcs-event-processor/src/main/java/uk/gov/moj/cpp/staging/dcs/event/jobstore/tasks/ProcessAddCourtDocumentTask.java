@@ -227,9 +227,17 @@ public class ProcessAddCourtDocumentTask extends BaseTask implements ExecutableT
         return defendantReferralIdMap;
     }
 
-    private boolean isMaterialMasterDefendantIsLinkedDefendant(final UUID eventMasterDefendantId, final DcsCaseDetailEntity dcsCaseDetailEntity, final Map<String, String> masterDefendantIdMap){
-        final String defendantId = getKeyByValue(masterDefendantIdMap, eventMasterDefendantId.toString());
-        return nonNull(defendantId) && defendantId.equalsIgnoreCase(dcsCaseDetailEntity.getDefendantId().toString());
+    private boolean isMaterialMasterDefendantIsLinkedDefendant(final UUID eventId,
+                                                               final DcsCaseDetailEntity entity, final Map<String, String> masterDefendantIdMap) {
+        final String keyByMasterId = getKeyByValue(masterDefendantIdMap, eventId.toString());
+
+        final boolean matchesMaster = keyByMasterId != null
+                && keyByMasterId.equalsIgnoreCase(entity.getDefendantId().toString());
+
+        final boolean matchesDefendant = masterDefendantIdMap.containsKey(eventId.toString())
+                && eventId.equals(entity.getDefendantId());
+
+        return matchesMaster || matchesDefendant;
     }
 
     private UUID getCaseIdFromMultipleCaseIds(final List<UUID> prosecutionCases, final UUID defendantId) {

@@ -31,7 +31,6 @@ public class ProsecutionCaseHelper {
                             .add(CASE_ID, caseId.toString())
             );
             final JsonObject prosecutionCaseJson = progressionService.getProsecutionCaseByCaseId(requestEnvelopeWithCaseId, caseId.toString());
-            logger.info ("-------prosecutionCaseJson-------- {}",prosecutionCaseJson);
             return jsonObjectToObjectConverter.convert(prosecutionCaseJson, ProsecutionCase.class);
         } catch (Exception e){
             logger.info("Exception occurred while getProsecutionCase - {}", e.getMessage());
