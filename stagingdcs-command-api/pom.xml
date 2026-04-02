@@ -3,7 +3,7 @@
     <parent>
         <artifactId>stagingdcs-parent</artifactId>
         <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
-        <version>17.103.11-SNAPSHOT</version>
+        <version>17.103.11</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
