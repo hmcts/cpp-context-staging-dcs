@@ -1,8 +1,8 @@
 package uk.gov.moj.cpp.staging.dcs.event.util;
 
 import static java.util.UUID.randomUUID;
-import static javax.json.Json.createArrayBuilder;
-import static javax.json.Json.createObjectBuilder;
+import static uk.gov.justice.services.messaging.JsonObjects.createArrayBuilder;
+import static uk.gov.justice.services.messaging.JsonObjects.createObjectBuilder;
 
 import uk.gov.moj.cpp.staging.dcs.domain.common.pojo.BailStatus;
 import uk.gov.moj.cpp.staging.dcs.domain.common.pojo.Defendant;
@@ -12,7 +12,7 @@ import uk.gov.moj.cpp.staging.dcs.domain.common.pojo.PersonDefendant;
 import java.time.LocalDate;
 import java.util.UUID;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
 
@@ -26,9 +26,9 @@ public class TestUtil {
         if (defendant.personDefendant() != null) {
             JsonObjectBuilder personDefendantJsonObjectBuilder = createObjectBuilder()
                     .add("id", defendantId)
-                    .add("personDefendant", Json.createObjectBuilder()
+                    .add("personDefendant", JsonObjects.createObjectBuilder()
                             .add("bailStatus", defendant.personDefendant().bailStatus().description())
-                            .add("personDetails", Json.createObjectBuilder()
+                            .add("personDetails", JsonObjects.createObjectBuilder()
                                     .add("dateOfBirth", defendant.personDefendant().personDetails().dateOfBirth().toString())
                                     .add("firstName", defendant.personDefendant().personDetails().firstName())
                                     .add("interpreterLanguageNeeds", defendant.personDefendant().personDetails().interpreterLanguageNeeds())
@@ -50,7 +50,7 @@ public class TestUtil {
                 .add("id", caseId)
                 .add("defendants", createArrayBuilder().add(defendantJsonObjectBuilder).build())
                 .add("prosecutionCaseIdentifier", createObjectBuilder().add("caseUrn", "XJDKMD").build());
-        return Json.createObjectBuilder()
+        return JsonObjects.createObjectBuilder()
                 .add("prosecutionCase", prosecutionCaseBuilder.build())
                 .build();
     }
@@ -72,11 +72,11 @@ public class TestUtil {
     }
 
     public static JsonObject createAssociationObject() {
-        return Json.createObjectBuilder()
-                .add("association", Json.createObjectBuilder()
+        return JsonObjects.createObjectBuilder()
+                .add("association", JsonObjects.createObjectBuilder()
                         .add("organisationId", randomUUID().toString())
                         .add("organisationName", "Harry & Co LLP")
-                        .add("address", Json.createObjectBuilder()
+                        .add("address", JsonObjects.createObjectBuilder()
                                 .add("address1", "Legal House")
                                 .add("address2", "15 Sewell Street")
                                 .add("address3", "Hammersmith")

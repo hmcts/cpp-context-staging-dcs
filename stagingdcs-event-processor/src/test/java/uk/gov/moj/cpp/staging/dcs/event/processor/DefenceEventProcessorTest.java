@@ -24,7 +24,7 @@ import uk.gov.moj.cpp.staging.dcs.persistance.repository.DcsCaseDetailRepository
 
 import java.util.UUID;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
@@ -160,11 +160,11 @@ class DefenceEventProcessorTest {
         JsonObjectBuilder actionOne = createJsonObjectBuilder(randomUUID().toString(), "DefendantDocuments");
         JsonObjectBuilder actionTwo = createJsonObjectBuilder(randomUUID().toString(), "DefenceClient");
 
-        JsonArrayBuilder permissionsArray = Json.createArrayBuilder()
+        JsonArrayBuilder permissionsArray = JsonObjects.createArrayBuilder()
                 .add(actionOne)
                 .add(actionTwo);
 
-        JsonObjectBuilder associatedObject = Json.createObjectBuilder()
+        JsonObjectBuilder associatedObject = JsonObjects.createObjectBuilder()
                 .add("caseId", String.valueOf(caseId))
                 .add("defendantId", String.valueOf(defendantId))
                 .add("laaContractNumber", "1234567")
@@ -181,11 +181,11 @@ class DefenceEventProcessorTest {
         JsonObjectBuilder actionOne = createJsonObjectBuilder(randomUUID().toString(), "DefendantDocuments");
         JsonObjectBuilder actionTwo = createJsonObjectBuilder(randomUUID().toString(), "DefenceClient");
 
-        JsonArrayBuilder permissionsArray = Json.createArrayBuilder()
+        JsonArrayBuilder permissionsArray = JsonObjects.createArrayBuilder()
                 .add(actionOne)
                 .add(actionTwo);
 
-        JsonObjectBuilder associatedObject = Json.createObjectBuilder()
+        JsonObjectBuilder associatedObject = JsonObjects.createObjectBuilder()
                 .add("caseId", String.valueOf(caseId))
                 .add("defendantId", String.valueOf(defendantId))
                 .add("organisationId", randomUUID().toString())
@@ -195,7 +195,7 @@ class DefenceEventProcessorTest {
     }
 
     private JsonObjectBuilder createJsonObjectBuilder(final String id, final String object) {
-        return Json.createObjectBuilder()
+        return JsonObjects.createObjectBuilder()
                 .add("action", "View")
                 .add("id", id)
                 .add("object", object)
