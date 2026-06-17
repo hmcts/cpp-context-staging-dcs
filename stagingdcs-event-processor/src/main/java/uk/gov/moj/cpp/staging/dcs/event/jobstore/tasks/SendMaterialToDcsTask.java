@@ -44,7 +44,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import javax.inject.Inject;
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
@@ -139,7 +139,7 @@ public class SendMaterialToDcsTask extends BaseTask implements ExecutableTask {
     }
 
     private JsonObject buildDcsPayload(final MaterialTaskData taskData) {
-        final JsonObjectBuilder objectBuilder = Json.createObjectBuilder()
+        final JsonObjectBuilder objectBuilder = JsonObjects.createObjectBuilder()
                 .add(CASE_ID, taskData.getCaseId())
                 .add(CASE_REFERRAL, taskData.getCaseReferralId())
                 .add(MATERIAL_ID, taskData.getMaterialId())
@@ -151,9 +151,9 @@ public class SendMaterialToDcsTask extends BaseTask implements ExecutableTask {
                 .add(DOCUMENT_SECTION, taskData.getDocumentSection());
 
         if (isNotEmpty(taskData.getDefendantIdReferralIdMap())) {
-            final JsonArrayBuilder defendantArray = Json.createArrayBuilder();
+            final JsonArrayBuilder defendantArray = JsonObjects.createArrayBuilder();
             taskData.getDefendantIdReferralIdMap().forEach((k, v) ->
-                    defendantArray.add(Json.createObjectBuilder()
+                    defendantArray.add(JsonObjects.createObjectBuilder()
                             .add(DEFENDANT_ID, k.toString())
                             .add(DEFENDANT_REFERRAL, v.toString())
                             .build())
