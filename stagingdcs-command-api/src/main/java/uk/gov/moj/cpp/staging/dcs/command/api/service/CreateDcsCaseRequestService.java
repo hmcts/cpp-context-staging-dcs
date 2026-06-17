@@ -4,8 +4,8 @@ import static java.util.Objects.nonNull;
 import static java.util.Optional.ofNullable;
 import static java.util.UUID.fromString;
 import static java.util.UUID.randomUUID;
-import static javax.json.Json.createArrayBuilder;
-import static javax.json.Json.createObjectBuilder;
+import static uk.gov.justice.services.messaging.JsonObjects.createArrayBuilder;
+import static uk.gov.justice.services.messaging.JsonObjects.createObjectBuilder;
 import static uk.gov.justice.services.messaging.JsonObjects.getString;
 import static uk.gov.moj.cpp.staging.dcs.domain.common.Constants.BAIL_STATUS;
 import static uk.gov.moj.cpp.staging.dcs.domain.common.Constants.CASE_ID;
@@ -51,7 +51,7 @@ import java.util.Set;
 import java.util.UUID;
 
 import javax.inject.Inject;
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObject;
@@ -203,7 +203,7 @@ public class CreateDcsCaseRequestService {
 
     public JsonObject transformPayload(final JsonObject payload) {
         final String caseId = payload.getString(CASE_ID);
-        final JsonObjectBuilder transformedPayload = Json.createObjectBuilder()
+        final JsonObjectBuilder transformedPayload = JsonObjects.createObjectBuilder()
                 .add(CASE_ID, caseId)
                 .add(CASE_URN, payload.getString(CASE_URN))
                 .add(PROSECUTION_AUTHORITY, getProsecutorType(payload.getString(PROSECUTION_AUTHORITY)));

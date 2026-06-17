@@ -2,7 +2,7 @@ package uk.gov.moj.cpp.staging.dcs.stub;
 
 import java.io.StringReader;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonObject;
 import javax.ws.rs.core.Response;
 
@@ -38,6 +38,6 @@ public class SimpleResponse {
     }
 
     public JsonObject asJsonObject() {
-        return Json.createReader(new StringReader(string)).readObject();
+        return JsonObjects.createReader(new StringReader(string)).readObject();
     }
 }

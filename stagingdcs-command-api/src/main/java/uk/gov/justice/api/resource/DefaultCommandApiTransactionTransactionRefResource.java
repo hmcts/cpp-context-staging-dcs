@@ -1,7 +1,7 @@
 package uk.gov.justice.api.resource;
 
 import static java.util.UUID.randomUUID;
-import static javax.json.Json.createObjectBuilder;
+import static uk.gov.justice.services.messaging.JsonObjects.createObjectBuilder;
 import static org.apache.hc.core5.http.HttpStatus.SC_BAD_REQUEST;
 import static uk.gov.justice.services.core.annotation.Component.COMMAND_API;
 import static uk.gov.justice.services.messaging.JsonEnvelope.envelopeFrom;
