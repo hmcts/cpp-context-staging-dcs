@@ -4,7 +4,7 @@ import static java.util.Objects.isNull;
 import static java.util.Optional.ofNullable;
 import static java.util.UUID.fromString;
 import static java.util.UUID.randomUUID;
-import static javax.json.Json.createObjectBuilder;
+import static uk.gov.justice.services.messaging.JsonObjects.createObjectBuilder;
 import static org.apache.commons.lang3.StringUtils.join;
 import static org.apache.hc.core5.http.HttpStatus.SC_OK;
 import static uk.gov.justice.services.common.http.HeaderConstants.USER_ID;

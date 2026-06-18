@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Stream;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonObject;
 
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -79,7 +79,7 @@ class StagingDcsQueryApiTest {
                         createTransactionMetadataEntity(caseId, defendantId, transactionStatus, TransactionType.DEFENCE_REPRESENTATION, transactionId3, updatedAt3),
                         createTransactionMetadataEntity(caseId, defendantId, transactionStatus, TransactionType.DEFENCE_REPRESENTATION, transactionId2, updatedAt2)));
 
-        JsonObject jsonObject = Json.createObjectBuilder()
+        JsonObject jsonObject = JsonObjects.createObjectBuilder()
                 .add("caseId", caseId.toString())
                 .build();
         JsonEnvelope jsonEnvelope = JsonEnvelope.envelopeFrom(
@@ -145,7 +145,7 @@ class StagingDcsQueryApiTest {
                 .thenReturn(List.of(createTransactionMetadataEntity(caseId, defendantId2, defendant2Transaction1Status, TransactionType.DEFENDANT_UPDATE, transactionId2_1, updatedAt2_1),
                         createTransactionMetadataEntity(caseId, defendantId1, defendant2Transaction2Status, TransactionType.DEFENCE_REPRESENTATION, transactionId2_2, updatedAt2_2)));
 
-        JsonObject jsonObject = Json.createObjectBuilder()
+        JsonObject jsonObject = JsonObjects.createObjectBuilder()
                 .add("caseId", caseId.toString())
                 .build();
         JsonEnvelope jsonEnvelope = JsonEnvelope.envelopeFrom(
@@ -217,7 +217,7 @@ class StagingDcsQueryApiTest {
                         createTransactionMetadataEntity(caseId, defendantId, transactionStatus, TransactionType.DEFENCE_REPRESENTATION, transactionId3, updatedAt3),
                         createTransactionMetadataEntity(caseId, defendantId, transactionStatus, TransactionType.DEFENCE_REPRESENTATION, transactionId2, updatedAt2)));
 
-        JsonObject jsonObject = Json.createObjectBuilder()
+        JsonObject jsonObject = JsonObjects.createObjectBuilder()
                 .add("caseId", caseId.toString())
                 .add("defendantId", defendantId.toString())
                 .build();
@@ -262,7 +262,7 @@ class StagingDcsQueryApiTest {
 
         when(dcsCaseDetailRepository.findByCaseIdDefendantId(caseId, defendantId)).thenReturn(createDcsCaseDetailEntity(caseId, defendantId, defendantStatus));
 
-        JsonObject jsonObject = Json.createObjectBuilder()
+        JsonObject jsonObject = JsonObjects.createObjectBuilder()
                 .add("caseId", caseId.toString())
                 .add("defendantId", defendantId.toString())
                 .build();

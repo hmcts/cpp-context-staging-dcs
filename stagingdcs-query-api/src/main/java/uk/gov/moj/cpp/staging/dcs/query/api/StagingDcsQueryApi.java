@@ -25,7 +25,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 import javax.inject.Inject;
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObjectBuilder;
 
@@ -55,7 +55,7 @@ public class StagingDcsQueryApi {
     public JsonEnvelope fetchCaseDetailByCaseId(final JsonEnvelope envelope) {
         final UUID caseId = UUID.fromString(envelope.payloadAsJsonObject().getString(CASE_ID));
 
-        final JsonObjectBuilder jsonObjectBuilder = Json.createObjectBuilder();
+        final JsonObjectBuilder jsonObjectBuilder = JsonObjects.createObjectBuilder();
         jsonObjectBuilder.add(CASE_ID, caseId.toString());
 
         List<DcsCaseDetailEntity> dcsCaseDetails = dcsCaseDetailRepository.findByCaseId(caseId);
@@ -72,7 +72,7 @@ public class StagingDcsQueryApi {
         final UUID caseId = UUID.fromString(envelope.payloadAsJsonObject().getString(CASE_ID));
         final UUID defendantId = UUID.fromString(envelope.payloadAsJsonObject().getString(DEFENDANT_ID));
 
-        final JsonObjectBuilder jsonObjectBuilder = Json.createObjectBuilder();
+        final JsonObjectBuilder jsonObjectBuilder = JsonObjects.createObjectBuilder();
         jsonObjectBuilder.add(CASE_ID, caseId.toString());
 
         DcsCaseDetailEntity dcsCaseDetailEntity = dcsCaseDetailRepository.findByCaseIdDefendantId(caseId, defendantId);
@@ -85,7 +85,7 @@ public class StagingDcsQueryApi {
 
     private JsonObjectBuilder mapCaseDetailsToJson(final List<DcsCaseDetailEntity> dcsCaseDetails, final JsonObjectBuilder jsonObjectBuilder) {
 
-        final JsonArrayBuilder defendantsArrayBuilder = Json.createArrayBuilder();
+        final JsonArrayBuilder defendantsArrayBuilder = JsonObjects.createArrayBuilder();
         dcsCaseDetails.stream()
                 .filter(dcsCaseDetailEntity -> isCaseDefendantStatusTerminal(dcsCaseDetailEntity.getDcsDefendantStatus()))
                 .forEach(dcsCaseDetailEntity -> mapCaseDetailsToResponse(dcsCaseDetails, jsonObjectBuilder, defendantsArrayBuilder, dcsCaseDetailEntity));
@@ -95,11 +95,11 @@ public class StagingDcsQueryApi {
     }
 
     private void mapCaseDetailsToResponse(final List<DcsCaseDetailEntity> dcsCaseDetails, final JsonObjectBuilder jsonObjectBuilder, final JsonArrayBuilder defendantsArrayBuilder, final DcsCaseDetailEntity dcsCaseDetailEntity) {
-        final JsonObjectBuilder defendantBuilder = Json.createObjectBuilder();
+        final JsonObjectBuilder defendantBuilder = JsonObjects.createObjectBuilder();
         defendantBuilder.add(DEFENDANT_ID, dcsCaseDetailEntity.getDefendantId().toString());
         defendantBuilder.add(DEFENDANT_STATUS, mapDefendantStatus(dcsCaseDetailEntity));
 
-        final JsonArrayBuilder operationsArrayBuilder = Json.createArrayBuilder();
+        final JsonArrayBuilder operationsArrayBuilder = JsonObjects.createArrayBuilder();
         List<TransactionMetadataEntity> transactionMetaDataList = transactionMetadataRepository.findByCaseIdAndDefendantId(
                 dcsCaseDetailEntity.getCaseId(), dcsCaseDetailEntity.getDefendantId());
 
@@ -116,7 +116,7 @@ public class StagingDcsQueryApi {
                         .stream()
                         .flatMap(Optional::stream)
                         .forEach(transaction -> {
-                            final JsonObjectBuilder operationBuilder = Json.createObjectBuilder();
+                            final JsonObjectBuilder operationBuilder = JsonObjects.createObjectBuilder();
                             operationBuilder.add(TRANSACTION_ID, transaction.getTransactionRefId().toString());
                             operationBuilder.add(STATUS, mapTransactionStatus(transaction.getTransactionStatus()));
                             operationBuilder.add(TYPE, transaction.getTransactionType());
