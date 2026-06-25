@@ -133,10 +133,7 @@ class InitiateCaseMaterialSubmissionTaskTest {
         assertThat(downloadableJsonData, hasSize(1));
         final MaterialTaskData downloadableTaskData1 = jsonObjectToObjectConverter.convert(downloadableJsonData.get(0), MaterialTaskData.class);
         assertOnMaterialTaskData(downloadableTaskData1, caseId, materialId1, null);
-        final ArgumentCaptor<String> taskName = ArgumentCaptor.forClass(String.class);
-        verify(setFailedStatusTaskFactory, times(1)).createRetryWithSetNotificationStatusFailedTaskOnExhaust(any(), taskName.capture(), anyString());
-        assertThat(taskName.getValue(), is(INITIATE_MATERIAL_TASK_FOR_CASE));
-
+        verify(dcsOperationHelper, times(1)).returnCompletedExecutionInfo();
     }
 
     @Test
@@ -179,6 +176,7 @@ class InitiateCaseMaterialSubmissionTaskTest {
         verify(dcsOperationHelper, times(1)).processInsertMaterialDocument(eligibleTask.capture());
         final MaterialTaskData downloadableTaskData = jsonObjectToObjectConverter.convert(eligibleTask.getValue(), MaterialTaskData.class);
         assertOnMaterialTaskData(downloadableTaskData, caseId, materialId2, linkedDefendantId);
+        verify(dcsOperationHelper, times(1)).returnCompletedExecutionInfo();
     }
 
     @Test
@@ -222,7 +220,9 @@ class InitiateCaseMaterialSubmissionTaskTest {
         verify(dcsOperationHelper, times(1)).processInsertMaterialDocument(eligibleTask.capture());
         final MaterialTaskData downloadableTaskData = jsonObjectToObjectConverter.convert(eligibleTask.getValue(), MaterialTaskData.class);
         assertOnMaterialTaskData(downloadableTaskData, caseId, materialId2, linkedDefendantId);
+        verify(dcsOperationHelper, times(1)).returnCompletedExecutionInfo();
     }
+
     @Test
     void executeMethodShouldNotProcess_DueToDuplicateMaterial() {
         final String defendantId = randomUUID().toString();
@@ -262,6 +262,7 @@ class InitiateCaseMaterialSubmissionTaskTest {
         verify(dcsOperationHelper, times(0)).processInsertMaterialDocument(any());
         verify(referenceDataService, times(1)).createDocumentAccessTypeMap();
         verify(progressionService, times(1)).getCourtDocumentsByParams(any(),any());
+        verify(dcsOperationHelper, times(1)).returnCompletedExecutionInfo();
     }
 
     @Test
@@ -303,6 +304,7 @@ class InitiateCaseMaterialSubmissionTaskTest {
         verify(dcsOperationHelper, times(0)).processInsertMaterialDocument(any());
         verify(referenceDataService, times(1)).createDocumentAccessTypeMap();
         verify(progressionService, times(1)).getCourtDocumentsByParams(any(),any());
+        verify(dcsOperationHelper, times(1)).returnCompletedExecutionInfo();
     }
 
     @Test

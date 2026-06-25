@@ -127,7 +127,7 @@ public class InitiateCaseMaterialSubmissionTask extends BaseTask implements Exec
             logger.debug("Exception while processing  task INITIATE_MATERIAL_TASK_FOR_CASE for caseId: {}, {}", caseId, e.getMessage());
             return retryTask(e.getMessage());
         }
-        return retryTask("Retrying INITIATE_MATERIAL_TASK_FOR_CASE task again without error to exhaust retries");
+        return dcsOperationHelper.returnCompletedExecutionInfo();
     }
 
     private List<UUID> getDefendantIdList(final List<DcsCaseDetailEntity> entityList) {
