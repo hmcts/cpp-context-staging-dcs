@@ -25,7 +25,7 @@ import uk.gov.moj.cpp.jobstore.api.ExecutionService;
 import uk.gov.moj.cpp.jobstore.api.task.ExecutionInfo;
 import uk.gov.moj.cpp.staging.dcs.event.service.LinkCaseAndDefendantRequestConverter;
 
-import javax.json.JsonObject;
+import jakarta.json.JsonObject;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

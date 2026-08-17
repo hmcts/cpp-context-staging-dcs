@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.Collections;
 import java.util.List;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import javax.sql.DataSource;
 
 import org.slf4j.Logger;

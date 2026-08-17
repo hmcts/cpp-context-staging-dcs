@@ -16,10 +16,10 @@ import uk.gov.justice.services.core.interceptor.spi.InterceptorContextProvider;
 import uk.gov.justice.services.messaging.JsonEnvelope;
 import uk.gov.moj.cpp.staging.dcs.event.service.DcsOperationHelper;
 
-import javax.ejb.Stateless;
-import javax.inject.Inject;
-import javax.json.JsonObject;
-import javax.ws.rs.core.Response;
+import jakarta.ejb.Stateless;
+import jakarta.inject.Inject;
+import jakarta.json.JsonObject;
+import jakarta.ws.rs.core.Response;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;

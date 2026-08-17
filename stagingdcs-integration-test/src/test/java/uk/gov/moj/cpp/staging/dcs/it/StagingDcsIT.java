@@ -6,8 +6,8 @@ import static java.lang.Boolean.TRUE;
 import static java.util.List.of;
 import static java.util.UUID.fromString;
 import static java.util.UUID.randomUUID;
-import static javax.ws.rs.core.Response.Status.ACCEPTED;
-import static javax.ws.rs.core.Response.Status.FORBIDDEN;
+import static jakarta.ws.rs.core.Response.Status.ACCEPTED;
+import static jakarta.ws.rs.core.Response.Status.FORBIDDEN;
 import static org.hamcrest.CoreMatchers.anyOf;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -65,9 +65,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import javax.json.JsonArray;
-import javax.json.JsonObject;
-import javax.ws.rs.core.Response;
+import jakarta.json.JsonArray;
+import jakarta.json.JsonObject;
+import jakarta.ws.rs.core.Response;
 
 import com.google.common.collect.ImmutableMap;
 import org.apache.hc.core5.http.HttpStatus;

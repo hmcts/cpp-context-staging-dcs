@@ -13,8 +13,8 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 import uk.gov.justice.services.messaging.JsonObjects;
-import javax.json.JsonObject;
-import javax.json.JsonObjectBuilder;
+import jakarta.json.JsonObject;
+import jakarta.json.JsonObjectBuilder;
 
 public class TestUtil {
 

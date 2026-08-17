@@ -20,14 +20,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Path;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Path;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 
 import com.google.common.collect.Lists;
 
@@ -56,7 +56,7 @@ public class TransactionMetadataRepository extends BaseRepository {
     public static final String TRANSACTION_TYPE = "transactionType";
     public static final String UPDATED_AT = "updatedAt";
 
-    @Inject
+    @PersistenceContext(unitName = "stagingdcs")
     private EntityManager entityManager;
 
 

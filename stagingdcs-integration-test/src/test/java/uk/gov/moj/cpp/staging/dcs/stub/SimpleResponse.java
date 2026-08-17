@@ -3,8 +3,8 @@ package uk.gov.moj.cpp.staging.dcs.stub;
 import java.io.StringReader;
 
 import uk.gov.justice.services.messaging.JsonObjects;
-import javax.json.JsonObject;
-import javax.ws.rs.core.Response;
+import jakarta.json.JsonObject;
+import jakarta.ws.rs.core.Response;
 
 public class SimpleResponse {
 

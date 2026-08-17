@@ -2,7 +2,7 @@ package uk.gov.moj.cpp.staging.dcs.material.client;
 
 import java.util.UUID;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 
 /**
  * staging-dcs-owned copy of material's URL-building helper (decouples staging-dcs from the

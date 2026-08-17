@@ -4,7 +4,7 @@ import static com.jayway.jsonpath.matchers.JsonPathMatchers.withJsonPath;
 import static com.jayway.jsonpath.matchers.JsonPathMatchers.withoutJsonPath;
 import static java.lang.Boolean.TRUE;
 import static java.util.UUID.randomUUID;
-import static javax.ws.rs.core.Response.Status.ACCEPTED;
+import static jakarta.ws.rs.core.Response.Status.ACCEPTED;
 import static org.apache.http.HttpStatus.SC_INTERNAL_SERVER_ERROR;
 import static org.apache.http.HttpStatus.SC_NOT_FOUND;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -30,8 +30,8 @@ import uk.gov.moj.cpp.staging.dcs.stub.SimpleRestClient;
 import java.io.IOException;
 import java.util.UUID;
 
-import javax.json.JsonObject;
-import javax.ws.rs.core.Response;
+import jakarta.json.JsonObject;
+import jakarta.ws.rs.core.Response;
 
 import com.google.common.collect.ImmutableMap;
 import org.hamcrest.CoreMatchers;

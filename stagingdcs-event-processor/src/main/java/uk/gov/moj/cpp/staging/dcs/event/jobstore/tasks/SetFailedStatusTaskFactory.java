@@ -13,7 +13,7 @@ import uk.gov.moj.cpp.staging.dcs.event.jobstore.jobdata.SetNotificationStatusFa
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 public class SetFailedStatusTaskFactory {
 

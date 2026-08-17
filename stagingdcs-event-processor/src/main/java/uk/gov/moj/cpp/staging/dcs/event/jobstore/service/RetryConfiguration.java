@@ -5,7 +5,7 @@ import uk.gov.justice.services.common.configuration.GlobalValue;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 public class RetryConfiguration {
 

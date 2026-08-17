@@ -2,7 +2,7 @@ package uk.gov.moj.cpp.staging.dcs.helper;
 
 import static java.util.UUID.randomUUID;
 import static java.util.concurrent.TimeUnit.SECONDS;
-import static javax.ws.rs.core.Response.Status.OK;
+import static jakarta.ws.rs.core.Response.Status.OK;
 import static org.apache.commons.collections.MapUtils.isNotEmpty;
 import static org.hamcrest.CoreMatchers.allOf;
 import static uk.gov.justice.services.common.http.HeaderConstants.USER_ID;
