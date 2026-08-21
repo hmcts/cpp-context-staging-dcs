@@ -34,10 +34,10 @@ import java.util.List;
 import java.util.Set;
 
 import uk.gov.justice.services.messaging.JsonObjects;
-import javax.json.JsonArray;
-import javax.json.JsonArrayBuilder;
-import javax.json.JsonObject;
-import javax.json.JsonValue;
+import jakarta.json.JsonArray;
+import jakarta.json.JsonArrayBuilder;
+import jakarta.json.JsonObject;
+import jakarta.json.JsonValue;
 
 @SuppressWarnings("squid:S2637")
 public class LinkCaseAndDefendantRequestConverter {

@@ -13,7 +13,7 @@ import static org.apache.http.HttpStatus.SC_OK;
 
 import java.util.Map;
 
-import javax.json.JsonObjectBuilder;
+import jakarta.json.JsonObjectBuilder;
 
 public class MaterialServiceStub {
 

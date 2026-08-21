@@ -2,7 +2,7 @@ package uk.gov.moj.cpp.staging.dcs.event.service;
 
 import uk.gov.moj.cpp.staging.dcs.event.service.azureblob.AzureBlobClientService;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.slf4j.Logger;
 @SuppressWarnings("java:S2629")

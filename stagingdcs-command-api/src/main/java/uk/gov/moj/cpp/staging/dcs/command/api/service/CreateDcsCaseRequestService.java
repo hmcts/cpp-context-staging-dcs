@@ -50,14 +50,14 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import uk.gov.justice.services.messaging.JsonObjects;
-import javax.json.JsonArray;
-import javax.json.JsonArrayBuilder;
-import javax.json.JsonObject;
-import javax.json.JsonObjectBuilder;
-import javax.json.JsonValue;
-import javax.transaction.Transactional;
+import jakarta.json.JsonArray;
+import jakarta.json.JsonArrayBuilder;
+import jakarta.json.JsonObject;
+import jakarta.json.JsonObjectBuilder;
+import jakarta.json.JsonValue;
+import jakarta.transaction.Transactional;
 
 import org.slf4j.Logger;
 

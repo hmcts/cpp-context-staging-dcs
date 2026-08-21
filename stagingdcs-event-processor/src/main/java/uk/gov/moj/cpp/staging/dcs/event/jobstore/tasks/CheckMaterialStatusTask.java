@@ -17,8 +17,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import javax.inject.Inject;
-import javax.json.JsonObject;
+import jakarta.inject.Inject;
+import jakarta.json.JsonObject;
 
 @SuppressWarnings({"squid:S6813","squid:S2629"})
 @Task(CHECK_MATERIAL_STATUS_TASK)

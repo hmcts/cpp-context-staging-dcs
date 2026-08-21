@@ -16,8 +16,8 @@ import java.io.StringReader;
 import java.util.Objects;
 
 import uk.gov.justice.services.messaging.JsonObjects;
-import javax.json.JsonObject;
-import javax.json.JsonReader;
+import jakarta.json.JsonObject;
+import jakarta.json.JsonReader;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.io.Resources;

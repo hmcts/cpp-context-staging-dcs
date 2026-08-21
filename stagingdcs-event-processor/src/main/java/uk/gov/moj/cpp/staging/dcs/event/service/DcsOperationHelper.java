@@ -5,7 +5,7 @@ import static java.lang.String.format;
 import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 import static java.util.UUID.fromString;
-import static javax.transaction.Transactional.TxType.REQUIRES_NEW;
+import static jakarta.transaction.Transactional.TxType.REQUIRES_NEW;
 import static org.apache.commons.collections.CollectionUtils.isNotEmpty;
 import static org.apache.commons.collections.MapUtils.isEmpty;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
@@ -60,10 +60,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import javax.inject.Inject;
-import javax.json.JsonObject;
-import javax.transaction.Transactional;
-import javax.ws.rs.NotFoundException;
+import jakarta.inject.Inject;
+import jakarta.json.JsonObject;
+import jakarta.transaction.Transactional;
+import jakarta.ws.rs.NotFoundException;
 
 import org.slf4j.Logger;
 

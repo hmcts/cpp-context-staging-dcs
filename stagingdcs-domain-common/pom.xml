@@ -4,7 +4,7 @@
     <parent>
         <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
         <artifactId>stagingdcs-parent</artifactId>
-        <version>17.103.15-SNAPSHOT</version>
+        <version>25.104.0-M1-SNAPSHOT</version>
     </parent>
 
     <artifactId>stagingdcs-domain-common</artifactId>
@@ -19,8 +19,8 @@
             <artifactId>utilities-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>javax.json</groupId>
-            <artifactId>javax.json-api</artifactId>
+            <groupId>jakarta.json</groupId>
+            <artifactId>jakarta.json-api</artifactId>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

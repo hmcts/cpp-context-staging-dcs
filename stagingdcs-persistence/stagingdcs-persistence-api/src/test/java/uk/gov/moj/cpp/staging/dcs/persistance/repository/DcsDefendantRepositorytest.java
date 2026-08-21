@@ -1,6 +1,6 @@
 package uk.gov.moj.cpp.staging.dcs.persistance.repository;
 
-import static io.smallrye.common.constraint.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.times;

@@ -4,15 +4,15 @@
     <parent>
         <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
         <artifactId>stagingdcs-persistence</artifactId>
-        <version>17.103.15-SNAPSHOT</version>
+        <version>25.104.0-M1-SNAPSHOT</version>
     </parent>
 
     <artifactId>stagingdcs-persistence-api</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -32,8 +32,8 @@
             <artifactId>utilities-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
         </dependency>
 
         <dependency>

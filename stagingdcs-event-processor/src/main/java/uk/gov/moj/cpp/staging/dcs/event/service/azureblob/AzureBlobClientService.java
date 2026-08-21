@@ -9,9 +9,9 @@ import uk.gov.justice.services.common.configuration.GlobalValue;
 import java.io.File;
 import java.net.URL;
 
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
 import com.azure.core.util.Configuration;
 import com.azure.core.util.ConfigurationBuilder;

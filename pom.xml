@@ -5,19 +5,19 @@
     <parent>
         <groupId>uk.gov.moj.cpp.common</groupId>
         <artifactId>service-parent-pom</artifactId>
-        <version>17.103.9</version>
+        <version>25.104.0-M10</version>
     </parent>
 
     <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
     <artifactId>stagingdcs-parent</artifactId>
-    <version>17.103.15-SNAPSHOT</version>
+    <version>25.104.0-M1-SNAPSHOT</version>
     <properties>
         <mvn.site.url>file://${project.build.directory}/site</mvn.site.url>
         <commons-dbutils.version>1.6</commons-dbutils.version>
         <jgitflow.maven.developBranchName>main</jgitflow.maven.developBranchName>
-        <coredomain.version>17.103.13</coredomain.version>
-        <progression.version>17.0.269</progression.version>
-        <referencedata.version>17.103.133</referencedata.version>
+        <coredomain.version>25.104.0-M11</coredomain.version>
+        <progression.version>17.0.286</progression.version>
+        <referencedata.version>17.104.140</referencedata.version>
         <defence.version>17.0.94</defence.version>
         <usersgroups.version>17.104.49</usersgroups.version>
         <material.version>17.0.80</material.version>
@@ -26,7 +26,6 @@
         <azure.storage.version>8.6.6</azure.storage.version>
         <azure.core.version>1.53.0</azure.core.version>
         <azure.identity.version>1.14.0</azure.identity.version>
-        <netty.common.version>4.1.112.Final</netty.common.version>
     </properties>
 
     <packaging>pom</packaging>
@@ -91,11 +90,6 @@
                 <artifactId>commons-dbutils</artifactId>
                 <version>${commons-dbutils.version}</version>
                 <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-common</artifactId>
-                <version>${netty.common.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

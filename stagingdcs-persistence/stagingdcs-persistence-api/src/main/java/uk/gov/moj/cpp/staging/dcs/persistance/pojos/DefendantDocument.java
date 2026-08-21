@@ -4,7 +4,7 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.UUID;
 
-import javax.persistence.Column;
+import jakarta.persistence.Column;
 
 public class DefendantDocument implements Serializable {
 

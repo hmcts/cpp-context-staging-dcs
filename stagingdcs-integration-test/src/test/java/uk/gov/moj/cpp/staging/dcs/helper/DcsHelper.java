@@ -6,7 +6,7 @@ import uk.gov.moj.cpp.staging.dcs.util.FileUtil;
 import java.util.List;
 import java.util.UUID;
 
-import javax.json.JsonObject;
+import jakarta.json.JsonObject;
 
 public class DcsHelper {
     public JsonObject createCaseinDcsRequest(final UUID caseId, final UUID defendantId, final String fileName) {

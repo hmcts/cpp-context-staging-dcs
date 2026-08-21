@@ -4,15 +4,15 @@
     <parent>
         <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
         <artifactId>stagingdcs-parent</artifactId>
-        <version>17.103.15-SNAPSHOT</version>
+        <version>25.104.0-M1-SNAPSHOT</version>
     </parent>
 
     <artifactId>stagingdcs-healthchecks</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>

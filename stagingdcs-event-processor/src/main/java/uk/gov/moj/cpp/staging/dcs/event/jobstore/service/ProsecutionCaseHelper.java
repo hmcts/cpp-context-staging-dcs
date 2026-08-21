@@ -11,8 +11,8 @@ import uk.gov.moj.cpp.staging.dcs.event.service.ProgressionService;
 
 import java.util.UUID;
 
-import javax.inject.Inject;
-import javax.json.JsonObject;
+import jakarta.inject.Inject;
+import jakarta.json.JsonObject;
 
 import org.slf4j.Logger;
 

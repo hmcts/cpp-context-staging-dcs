@@ -28,7 +28,7 @@ import uk.gov.moj.cpp.staging.dcs.persistance.repository.DcsCaseDetailRepository
 import java.util.List;
 import java.util.UUID;
 
-import javax.json.JsonObject;
+import jakarta.json.JsonObject;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
