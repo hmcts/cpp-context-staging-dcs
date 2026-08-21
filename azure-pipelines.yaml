@@ -31,6 +31,7 @@ pool:
 variables:
   sonarqubeProject: "uk.gov.moj.cpp.staging.dcs:stagingdcs-parent" # update eg: uk.gov.moj.cpp.listing:listing-parent
   service_Name: 'stagingdcs' # this should be service name. Image repository will be <serviceName>-service and should be in sysnc with aks-deploy repo.. eg : stagingbulkscan, hearing, systemidmapper
+  docker_build_image: true # build and push the stagingdcs-service Docker image on team/main builds
   itTest_Folder: 'stagingdcs-integration-test' # integration test folder name system-id-mapper-integration-test
 
 stages:
@@ -48,3 +49,5 @@ stages:
           serviceName: ${{ variables['service_Name'] }}
           itTestFolder: ${{ variables['itTest_Folder'] }}
           aksDeployBranch: 'wildfly40'
+          dockerfilePath: docker/Dockerfile_stagingdcs-service
+          repository: hmcts/stagingdcs-service
