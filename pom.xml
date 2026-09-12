@@ -5,7 +5,7 @@
     <parent>
         <groupId>uk.gov.moj.cpp.common</groupId>
         <artifactId>service-parent-pom</artifactId>
-        <version>25.104.0-M10</version>
+        <version>25.104.1</version>
     </parent>
 
     <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
@@ -15,7 +15,7 @@
         <mvn.site.url>file://${project.build.directory}/site</mvn.site.url>
         <commons-dbutils.version>1.6</commons-dbutils.version>
         <jgitflow.maven.developBranchName>main</jgitflow.maven.developBranchName>
-        <coredomain.version>25.104.0-M11</coredomain.version>
+        <coredomain.version>25.104.1</coredomain.version>
         <progression.version>17.0.286</progression.version>
         <referencedata.version>17.104.140</referencedata.version>
         <defence.version>17.0.94</defence.version>
