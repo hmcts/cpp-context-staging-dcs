@@ -17,7 +17,7 @@ import uk.gov.justice.services.core.requester.Requester;
 import uk.gov.justice.services.messaging.Envelope;
 import uk.gov.justice.services.messaging.JsonEnvelope;
 import uk.gov.justice.services.messaging.Metadata;
-import uk.gov.moj.cpp.material.url.MaterialUrlGenerator;
+import uk.gov.moj.cpp.staging.dcs.material.client.MaterialUrlGenerator;
 import uk.gov.moj.cpp.systemusers.ServiceContextSystemUserProvider;
 
 import java.util.HashMap;
