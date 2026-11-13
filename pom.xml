@@ -10,16 +10,16 @@
 
     <groupId>uk.gov.moj.cpp.staging.dcs</groupId>
     <artifactId>stagingdcs-parent</artifactId>
-    <version>17.103.18-SNAPSHOT</version>
+    <version>17.103.18-CHD-2786-SNAPSHOT</version>
     <properties>
         <mvn.site.url>file://${project.build.directory}/site</mvn.site.url>
         <commons-dbutils.version>1.6</commons-dbutils.version>
         <jgitflow.maven.developBranchName>main</jgitflow.maven.developBranchName>
-        <coredomain.version>17.103.14</coredomain.version>
-        <progression.version>17.0.286</progression.version>
+        <coredomain.version>17.104.6-CHD-2786-SNAPSHOT</coredomain.version>
+        <progression.version>17.104.308</progression.version>
         <referencedata.version>17.104.140</referencedata.version>
         <defence.version>17.0.94</defence.version>
-        <usersgroups.version>17.104.49</usersgroups.version>
+        <usersgroups.version>25.104.52</usersgroups.version>
         <material.version>17.0.80</material.version>
         <api-dcs-crime-version>0.9.3</api-dcs-crime-version>
         <api-cp-crime.version>0.3.2</api-cp-crime.version>
